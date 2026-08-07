@@ -1,0 +1,170 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0e12">
+  <meta name="description" content="一个无需联网、使用浏览器安全随机数的中文文字塔罗抽牌程序。">
+  <title>静室 · 中文塔罗抽牌</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cards.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">☉</div>
+    <div>
+      <p class="eyebrow">PRIVATE TAROT ROOM</p>
+      <h1>静室</h1>
+      <p class="subtitle">给问题留一盏低灯，给答案一点时间。</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="panel reading-setup" aria-labelledby="setupTitle">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01 / 提问与牌阵</p>
+          <h2 id="setupTitle">准备抽牌</h2>
+        </div>
+        <span class="deck-count">完整 78 张</span>
+      </div>
+
+      <div class="form-grid">
+        <div class="field field-question">
+          <label for="questionInput">你的问题 <span>可不填</span></label>
+          <textarea
+            id="questionInput"
+            rows="3"
+            maxlength="300"
+            placeholder="例如：我现在最需要理解的是什么？"
+          ></textarea>
+          <div class="field-meta">
+            <span>问题仅用于本次展示与历史记录</span>
+            <span id="questionCount">0 / 300</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="spreadSelect">选择牌阵</label>
+          <div class="select-wrap">
+            <select id="spreadSelect">
+              <option value="single">单张牌</option>
+              <option value="past-present-future">过去、现在、未来</option>
+              <option value="situation-obstacle-advice">现状、阻碍、建议</option>
+              <option value="options">选项A、选项B、综合建议</option>
+              <option value="near-development-result">近期、发展、结果</option>
+              <option value="custom">自定义抽牌数量</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field custom-count-field" id="customCountField" hidden>
+          <label for="customCount">抽牌数量</label>
+          <div class="number-control">
+            <button type="button" class="step-button" id="countMinus" aria-label="减少一张">−</button>
+            <input id="customCount" type="number" min="1" max="10" value="4" inputmode="numeric">
+            <button type="button" class="step-button" id="countPlus" aria-label="增加一张">＋</button>
+          </div>
+          <span class="field-hint">可选择 1 至 10 张</span>
+        </div>
+      </div>
+
+      <div class="position-preview" aria-live="polite">
+        <span class="preview-label">牌位</span>
+        <div id="positionPreview" class="position-tags"></div>
+      </div>
+
+      <div class="setup-actions">
+        <button type="button" class="button button-primary" id="drawButton">
+          <span>开始抽牌</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <details class="mechanism-note">
+        <summary>随机机制说明</summary>
+        <p>本程序使用浏览器 crypto.getRandomValues() 随机抽取卡牌与正逆位，不分析用户问题，不人为干预抽牌结果。</p>
+      </details>
+    </section>
+
+    <section class="reading-area" id="readingArea" aria-labelledby="readingTitle" hidden>
+      <div class="reading-context">
+        <div>
+          <p class="section-index">02 / 本次牌面</p>
+          <h2 id="readingTitle">请依次翻开牌面</h2>
+        </div>
+        <div class="reading-summary">
+          <p class="summary-label">问题</p>
+          <p id="questionDisplay">未填写问题</p>
+          <p id="spreadDisplay" class="spread-display"></p>
+        </div>
+      </div>
+
+      <p class="flip-instruction" id="flipInstruction">点击任意牌背逐张翻牌。所有结果已在开始抽牌时确定。</p>
+      <div class="card-table">
+        <div class="cards-grid" id="cardsGrid"></div>
+      </div>
+
+      <div class="reading-actions">
+        <button type="button" class="button button-secondary" id="saveButton" disabled>保存本次记录</button>
+        <button type="button" class="button button-ghost" id="resetButton">重新抽牌</button>
+      </div>
+      <p class="action-status" id="actionStatus" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="history-section" aria-labelledby="historyTitle">
+      <details class="history-panel" id="historyPanel">
+        <summary>
+          <span>
+            <span class="section-index">03 / 本机保存</span>
+            <span class="history-title" id="historyTitle">历史记录</span>
+          </span>
+          <span class="history-count" id="historyCount">0 条</span>
+        </summary>
+
+        <div class="history-content">
+          <div class="history-toolbar">
+            <p>记录仅保存在当前浏览器，不会上传。</p>
+            <button type="button" class="button button-danger button-small" id="clearHistoryButton" disabled>清空全部</button>
+          </div>
+          <div id="historyList" class="history-list"></div>
+          <p id="emptyHistory" class="empty-history">还没有保存过抽牌记录。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>塔罗适合用于自我观察与梳理，不替代医疗、法律、财务等专业建议。</p>
+    <p>离线文字版 · 第一阶段</p>
+  </footer>
+
+  <noscript>
+    <div class="noscript-message">此程序需要启用浏览器 JavaScript 才能进行本地抽牌。</div>
+  </noscript>
+
+  <template id="cardTemplate">
+    <button type="button" class="tarot-card" aria-pressed="false">
+      <span class="card-inner">
+        <span class="card-side card-back" aria-hidden="true">
+          <span class="back-frame">
+            <span class="back-corner back-corner-top">☾</span>
+            <span class="back-lines"></span>
+            <span class="back-emblem">
+              <span class="back-sun">☉</span>
+              <span class="back-eye"></span>
+            </span>
+            <span class="back-lines back-lines-bottom"></span>
+            <span class="back-corner back-corner-bottom">☽</span>
+          </span>
+        </span>
+        <span class="card-side card-front" aria-hidden="true"></span>
+      </span>
+    </button>
+  </template>
+</body>
+</html>
