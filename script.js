@@ -46,7 +46,8 @@ const appState = {
   currentReading: null,
   revealedIndexes: new Set(),
   saved: false,
-  history: []
+  history: [],
+  historySummaryModel: null
 };
 
 /* ------------------------------
@@ -176,6 +177,284 @@ function renderCardFace(card, isReversed, position) {
   return content;
 }
 
+/* ------------------------------
+   紧凑总结：只读取已经确定的牌面
+------------------------------ */
+
+function createSummaryModelFromReading(reading) {
+  return Object.freeze({
+    question: reading.question,
+    spreadName: reading.spreadName,
+    createdAt: reading.createdAt,
+    cards: Object.freeze(reading.results.map((result) => Object.freeze({
+      position: result.position,
+      cardId: result.card.id,
+      nameZh: result.card.nameZh,
+      nameEn: result.card.nameEn,
+      orientation: result.isReversed ? "逆位" : "正位",
+      keywords: Object.freeze([...getKeywords(result.card, result.isReversed)].slice(0, 3)),
+      meaning: result.isReversed ? result.card.reversedMeaning : result.card.uprightMeaning,
+      symbol: result.card.symbol,
+      image: result.card.image
+    })))
+  });
+}
+
+function createSummaryModelFromRecord(record) {
+  return {
+    question: record.question,
+    spreadName: record.spreadName,
+    createdAt: record.createdAt,
+    cards: record.cards.map((savedCard) => {
+      const sourceCard = window.TAROT_CARDS.find((card) => card.id === savedCard.cardId);
+      const isReversed = savedCard.orientation === "逆位";
+      const sourceKeywords = sourceCard ? getKeywords(sourceCard, isReversed) : [];
+      const savedKeywords = Array.isArray(savedCard.keywords) ? savedCard.keywords : [];
+
+      return {
+        position: savedCard.position || "未命名牌位",
+        cardId: savedCard.cardId || "",
+        nameZh: savedCard.nameZh || (sourceCard ? sourceCard.nameZh : "牌名未知"),
+        nameEn: savedCard.nameEn || (sourceCard ? sourceCard.nameEn : ""),
+        orientation: isReversed ? "逆位" : "正位",
+        keywords: (savedKeywords.length ? savedKeywords : sourceKeywords).slice(0, 3),
+        meaning: savedCard.meaning || (sourceCard
+          ? (isReversed ? sourceCard.reversedMeaning : sourceCard.uprightMeaning)
+          : ""),
+        symbol: savedCard.symbol || (sourceCard ? sourceCard.symbol : "·"),
+        image: typeof savedCard.image === "string"
+          ? savedCard.image
+          : (sourceCard ? sourceCard.image : null)
+      };
+    })
+  };
+}
+
+function renderSummaryReport(model) {
+  const report = document.createElement("article");
+  report.className = "summary-report summary-count-" + Math.min(model.cards.length, 10);
+
+  const header = document.createElement("header");
+  header.className = "summary-report-header";
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "summary-report-eyebrow";
+  eyebrow.textContent = "READING SUMMARY";
+
+  const title = document.createElement("h3");
+  title.textContent = "本次牌阵总结";
+
+  const facts = document.createElement("dl");
+  facts.className = "summary-facts";
+
+  appendSummaryFact(facts, "问题", "「" + model.question + "」", "summary-question");
+  appendSummaryFact(facts, "牌阵", model.spreadName, "summary-spread");
+  appendSummaryFact(facts, "牌位", model.cards.map((card) => card.position).join(" · "), "summary-positions");
+  appendSummaryFact(facts, "抽牌时间", formatDate(model.createdAt), "summary-time");
+
+  header.append(eyebrow, title, facts);
+
+  const grid = document.createElement("div");
+  grid.className = "summary-card-grid";
+
+  model.cards.forEach((card, index) => {
+    grid.append(renderSummaryMiniCard(card, index));
+  });
+
+  const trend = document.createElement("section");
+  trend.className = "summary-trend";
+
+  const trendTitle = document.createElement("h4");
+  trendTitle.textContent = "整体走势";
+
+  const trendList = document.createElement("ul");
+  model.cards.forEach((card) => {
+    const item = document.createElement("li");
+    const position = document.createElement("strong");
+    position.textContent = card.position + "：";
+    item.append(position, document.createTextNode(card.meaning));
+    trendList.append(item);
+  });
+
+  const combined = document.createElement("p");
+  combined.className = "summary-combined";
+  combined.textContent = createCombinedTrend(model.cards);
+
+  trend.append(trendTitle, trendList, combined);
+
+  const aiBlock = document.createElement("section");
+  aiBlock.className = "summary-ai-block";
+
+  const aiTitle = document.createElement("h4");
+  aiTitle.textContent = "AI 解读信息";
+
+  const aiText = document.createElement("pre");
+  aiText.textContent = createAiReadingText(model);
+
+  const sourceNote = document.createElement("p");
+  sourceNote.className = "summary-source-note";
+  sourceNote.textContent = "仅整理本次已确定的牌面数据，不进行 AI 解读。";
+
+  aiBlock.append(aiTitle, aiText);
+  report.append(header, grid, trend, aiBlock, sourceNote);
+
+  return report;
+}
+
+function appendSummaryFact(list, label, value, className) {
+  const group = document.createElement("div");
+  group.className = "summary-fact " + className;
+
+  const term = document.createElement("dt");
+  term.textContent = label;
+
+  const description = document.createElement("dd");
+  description.textContent = value;
+
+  group.append(term, description);
+  list.append(group);
+}
+
+function renderSummaryMiniCard(card, index) {
+  const miniCard = document.createElement("article");
+  miniCard.className = "summary-mini-card " + (card.orientation === "逆位" ? "is-reversed" : "is-upright");
+  miniCard.setAttribute("aria-label", card.position + "：" + card.nameZh + "，" + card.orientation);
+
+  const position = document.createElement("p");
+  position.className = "summary-mini-position";
+  position.textContent = card.position;
+
+  const visual = document.createElement("div");
+  visual.className = "summary-mini-visual";
+
+  const symbol = document.createElement("span");
+  symbol.className = "summary-mini-symbol";
+  symbol.setAttribute("aria-hidden", "true");
+  symbol.textContent = card.symbol;
+
+  if (card.image) {
+    const image = document.createElement("img");
+    image.className = "summary-mini-image";
+    image.alt = card.nameZh + "缩略卡面";
+    image.loading = "eager";
+    image.addEventListener("load", () => miniCard.classList.add("has-thumbnail"));
+    image.addEventListener("error", () => image.remove());
+    image.src = card.image;
+    visual.append(image);
+  }
+
+  visual.append(symbol);
+
+  const number = document.createElement("span");
+  number.className = "summary-mini-index";
+  number.textContent = String(index + 1).padStart(2, "0");
+
+  const nameZh = document.createElement("h4");
+  nameZh.textContent = card.nameZh;
+
+  const nameEn = document.createElement("p");
+  nameEn.className = "summary-mini-name-en";
+  nameEn.textContent = card.nameEn;
+
+  const orientation = document.createElement("p");
+  orientation.className = "summary-mini-orientation";
+  orientation.textContent = card.orientation;
+
+  const keywords = document.createElement("p");
+  keywords.className = "summary-mini-keywords";
+  keywords.textContent = card.keywords.join(" · ");
+
+  const meaning = document.createElement("p");
+  meaning.className = "summary-mini-meaning";
+  meaning.textContent = card.meaning;
+
+  miniCard.append(position, visual, number, nameZh, nameEn, orientation, keywords, meaning);
+  return miniCard;
+}
+
+function createCombinedTrend(cards) {
+  const clues = cards.map((card) => card.position + "「" + (card.keywords[0] || card.meaning) + "」");
+
+  if (clues.length === 1) {
+    return "本次核心线索为：" + clues[0] + "。";
+  }
+
+  return "牌位线索依次为：" + clues.join(" → ") + "。";
+}
+
+function createAiReadingText(model) {
+  return [
+    "问题：" + model.question,
+    "牌阵：" + model.spreadName,
+    ...model.cards.map((card) => (
+      card.position + "：" + card.nameZh + "｜" + card.orientation + "｜" + card.keywords.join("、")
+    ))
+  ].join("\n");
+}
+
+function showCurrentSummary(elements) {
+  if (!appState.currentReading) {
+    return;
+  }
+
+  const model = createSummaryModelFromReading(appState.currentReading);
+  elements.currentSummary.replaceChildren(renderSummaryReport(model));
+  elements.summarySection.hidden = false;
+}
+
+function openHistorySummary(elements, record) {
+  const model = createSummaryModelFromRecord(record);
+  appState.historySummaryModel = model;
+  elements.historySummary.replaceChildren(renderSummaryReport(model));
+
+  if (typeof elements.historySummaryDialog.showModal === "function") {
+    elements.historySummaryDialog.showModal();
+  } else {
+    elements.historySummaryDialog.setAttribute("open", "");
+  }
+}
+
+function closeHistorySummary(elements) {
+  setShareMode(elements, null);
+  appState.historySummaryModel = null;
+
+  if (typeof elements.historySummaryDialog.close === "function") {
+    elements.historySummaryDialog.close();
+  } else {
+    elements.historySummaryDialog.removeAttribute("open");
+  }
+}
+
+function toggleShareMode(elements, source) {
+  const isSameMode = document.body.classList.contains("is-share-mode") &&
+    document.body.dataset.shareSource === source;
+  setShareMode(elements, isSameMode ? null : source);
+}
+
+function setShareMode(elements, source) {
+  const isActive = Boolean(source);
+  document.body.classList.toggle("is-share-mode", isActive);
+
+  if (isActive) {
+    document.body.dataset.shareSource = source;
+  } else {
+    delete document.body.dataset.shareSource;
+  }
+
+  const currentActive = source === "current";
+  const historyActive = source === "history";
+
+  elements.shareButton.textContent = currentActive ? "退出截图模式" : "分享 / 截图模式";
+  elements.shareButton.setAttribute("aria-pressed", String(currentActive));
+  elements.historyShareButton.textContent = historyActive ? "退出截图模式" : "分享 / 截图模式";
+  elements.historyShareButton.setAttribute("aria-pressed", String(historyActive));
+
+  if (isActive) {
+    const target = historyActive ? elements.historySummaryDialog : elements.summarySection;
+    window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }
+}
+
 function getKeywords(card, isReversed) {
   return isReversed ? card.reversedKeywords : card.uprightKeywords;
 }
@@ -264,6 +543,9 @@ function getElements() {
     spreadDisplay: document.getElementById("spreadDisplay"),
     flipInstruction: document.getElementById("flipInstruction"),
     cardsGrid: document.getElementById("cardsGrid"),
+    summarySection: document.getElementById("summarySection"),
+    currentSummary: document.getElementById("currentSummary"),
+    shareButton: document.getElementById("shareButton"),
     saveButton: document.getElementById("saveButton"),
     resetButton: document.getElementById("resetButton"),
     actionStatus: document.getElementById("actionStatus"),
@@ -272,7 +554,11 @@ function getElements() {
     historyCount: document.getElementById("historyCount"),
     historyList: document.getElementById("historyList"),
     emptyHistory: document.getElementById("emptyHistory"),
-    clearHistoryButton: document.getElementById("clearHistoryButton")
+    clearHistoryButton: document.getElementById("clearHistoryButton"),
+    historySummaryDialog: document.getElementById("historySummaryDialog"),
+    historySummary: document.getElementById("historySummary"),
+    historyShareButton: document.getElementById("historyShareButton"),
+    closeHistorySummaryButton: document.getElementById("closeHistorySummaryButton")
   };
 }
 
@@ -293,6 +579,13 @@ function bindEvents(elements) {
   elements.drawButton.addEventListener("click", () => startReading(elements));
   elements.saveButton.addEventListener("click", () => saveCurrentReading(elements));
   elements.resetButton.addEventListener("click", () => resetReading(elements));
+  elements.shareButton.addEventListener("click", () => toggleShareMode(elements, "current"));
+  elements.historyShareButton.addEventListener("click", () => toggleShareMode(elements, "history"));
+  elements.closeHistorySummaryButton.addEventListener("click", () => closeHistorySummary(elements));
+  elements.historySummaryDialog.addEventListener("close", () => {
+    setShareMode(elements, null);
+    appState.historySummaryModel = null;
+  });
   elements.clearHistoryButton.addEventListener("click", () => clearAllHistory(elements));
 }
 
@@ -365,6 +658,7 @@ function startReading(elements) {
     question,
     spreadKey: spread.key,
     spreadName: spread.name,
+    createdAt: new Date().toISOString(),
     results: Object.freeze(results)
   });
   appState.revealedIndexes = new Set();
@@ -373,6 +667,9 @@ function startReading(elements) {
   setSetupLocked(elements, true);
   elements.saveButton.disabled = true;
   elements.saveButton.textContent = "保存本次记录";
+  setShareMode(elements, null);
+  elements.summarySection.hidden = true;
+  elements.currentSummary.replaceChildren();
   elements.actionStatus.textContent = "";
   elements.questionDisplay.textContent = question;
   elements.spreadDisplay.textContent = `${spread.name} · ${spread.positions.length} 张`;
@@ -420,8 +717,9 @@ function revealCard(elements, cardButton, index) {
   if (revealed === total) {
     elements.saveButton.disabled = false;
     elements.readingTitle.textContent = "本次牌面";
-    elements.flipInstruction.textContent = "所有牌已翻开，现在可以保存本次记录。";
+    elements.flipInstruction.textContent = "所有牌已翻开，已生成本次牌阵总结。";
     elements.actionStatus.textContent = "牌面已全部揭示。";
+    showCurrentSummary(elements);
   } else {
     elements.flipInstruction.textContent = `已翻开 ${revealed} / ${total} 张，继续点击牌背。`;
   }
@@ -449,7 +747,10 @@ function resetReading(elements) {
   appState.currentReading = null;
   appState.revealedIndexes = new Set();
   appState.saved = false;
+  setShareMode(elements, null);
   elements.cardsGrid.replaceChildren();
+  elements.currentSummary.replaceChildren();
+  elements.summarySection.hidden = true;
   elements.readingArea.hidden = true;
   elements.actionStatus.textContent = "";
   setSetupLocked(elements, false);
@@ -469,7 +770,7 @@ function saveCurrentReading(elements) {
 
   const record = {
     id: createRecordId(),
-    createdAt: new Date().toISOString(),
+    createdAt: reading.createdAt,
     question: reading.question,
     spreadKey: reading.spreadKey,
     spreadName: reading.spreadName,
@@ -479,7 +780,10 @@ function saveCurrentReading(elements) {
       nameZh: result.card.nameZh,
       nameEn: result.card.nameEn,
       orientation: result.isReversed ? "逆位" : "正位",
-      keywords: [...getKeywords(result.card, result.isReversed)]
+      keywords: [...getKeywords(result.card, result.isReversed)],
+      meaning: result.isReversed ? result.card.reversedMeaning : result.card.uprightMeaning,
+      symbol: result.card.symbol,
+      image: result.card.image
     }))
   };
 
@@ -609,13 +913,19 @@ function renderHistory(elements) {
     const actions = document.createElement("div");
     actions.className = "history-item-actions";
 
+    const viewSummaryButton = document.createElement("button");
+    viewSummaryButton.type = "button";
+    viewSummaryButton.className = "button button-ghost button-small";
+    viewSummaryButton.textContent = "查看总结";
+    viewSummaryButton.addEventListener("click", () => openHistorySummary(elements, record));
+
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
     deleteButton.className = "button button-danger button-small";
     deleteButton.textContent = "删除这条记录";
     deleteButton.addEventListener("click", () => deleteHistoryRecord(elements, record.id));
 
-    actions.append(deleteButton);
+    actions.append(viewSummaryButton, deleteButton);
     details.append(question, cards, actions);
     item.append(summary, details);
     elements.historyList.append(item);

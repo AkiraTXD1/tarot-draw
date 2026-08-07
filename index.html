@@ -109,6 +109,15 @@
         <div class="cards-grid" id="cardsGrid"></div>
       </div>
 
+      <section class="summary-section" id="summarySection" aria-label="本次牌阵总结" hidden>
+        <div id="currentSummary"></div>
+        <div class="summary-control-bar">
+          <button type="button" class="button button-ghost" id="shareButton" aria-pressed="false">
+            分享 / 截图模式
+          </button>
+        </div>
+      </section>
+
       <div class="reading-actions">
         <button type="button" class="button button-secondary" id="saveButton" disabled>保存本次记录</button>
         <button type="button" class="button button-ghost" id="resetButton">重新抽牌</button>
@@ -143,6 +152,18 @@
     <p>离线文字版 · 第一阶段</p>
   </footer>
 
+
+  <dialog class="summary-dialog" id="historySummaryDialog" aria-label="历史抽牌总结">
+    <div class="summary-dialog-shell">
+      <div id="historySummary"></div>
+      <div class="summary-dialog-actions">
+        <button type="button" class="button button-ghost" id="historyShareButton" aria-pressed="false">
+          分享 / 截图模式
+        </button>
+        <button type="button" class="button button-secondary" id="closeHistorySummaryButton">关闭</button>
+      </div>
+    </div>
+  </dialog>
   <noscript>
     <div class="noscript-message">此程序需要启用浏览器 JavaScript 才能进行本地抽牌。</div>
   </noscript>
