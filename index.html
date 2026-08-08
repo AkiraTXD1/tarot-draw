@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0b0e12">
-  <meta name="description" content="一个无需联网、使用浏览器安全随机数的中文文字塔罗抽牌程序。">
+  <meta name="description" content="一个无需联网、使用浏览器安全随机数并支持文字与经典公版卡面的中文塔罗抽牌程序。">
   <title>静室 · 中文塔罗抽牌</title>
-  <link rel="stylesheet" href="style.css?v=summary-1">
+  <link rel="stylesheet" href="style.css?v=classic-1">
+  <script src="decks.js?v=classic-1" defer></script>
   <script src="cards.js" defer></script>
-  <script src="script.js?v=summary-1" defer></script>
+  <script src="script.js?v=classic-1" defer></script>
 </head>
 <body>
   <div class="film-grain" aria-hidden="true"></div>
@@ -61,6 +62,21 @@
             </select>
           </div>
         </div>
+
+        <fieldset class="field deck-theme-field">
+          <legend>牌组主题</legend>
+          <div class="deck-theme-options" id="deckThemeOptions">
+            <label class="deck-theme-option">
+              <input type="radio" name="deckTheme" value="text" checked>
+              <span>文字版</span>
+            </label>
+            <label class="deck-theme-option">
+              <input type="radio" name="deckTheme" value="classic">
+              <span>经典牌组</span>
+            </label>
+          </div>
+          <p class="deck-theme-note" id="deckThemeNote">切换只改变显示，不会重新抽牌。</p>
+        </fieldset>
 
         <div class="field custom-count-field" id="customCountField" hidden>
           <label for="customCount">抽牌数量</label>
@@ -149,7 +165,7 @@
 
   <footer class="site-footer">
     <p>塔罗适合用于自我观察与梳理，不替代医疗、法律、财务等专业建议。</p>
-    <p>离线文字版 · 第一阶段</p>
+    <p>文字版 / 经典公版卡面 · 第二阶段</p>
   </footer>
 
 

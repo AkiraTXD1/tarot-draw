@@ -1,10 +1,52 @@
 ﻿/*
  * 经典韦特体系 78 张塔罗牌基础数据。
  * 本文件只保存数据，不包含抽牌或界面逻辑。
- * 每条定义最后一个参数是 image；未来可把 null 换成 assets/cards/ 下的路径。
+ * image 为按主题索引的资源对象；文件名只服务显示层，不参与抽牌。
  */
 (function () {
   "use strict";
+
+  const MINOR_RANK_SLUGS = Object.freeze({
+    1: "ace",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine",
+    10: "ten",
+    11: "page",
+    12: "knight",
+    13: "queen",
+    14: "king"
+  });
+
+  function slugifyEnglishName(name) {
+    return name
+      .toLowerCase()
+      .replace(/^the\s+/, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  function createImageSources(id, number, nameEn, suit, imageOverrides) {
+    const suffix = suit === "Major Arcana"
+      ? slugifyEnglishName(nameEn)
+      : MINOR_RANK_SLUGS[number];
+
+    const defaults = {
+      text: null,
+      classic: `assets/cards/classic/${id}-${suffix}.webp`
+    };
+
+    if (imageOverrides && typeof imageOverrides === "object") {
+      Object.assign(defaults, imageOverrides);
+    }
+
+    return Object.freeze(defaults);
+  }
 
   function makeCard(id, number, nameZh, nameEn, suit, symbol, uprightKeywords, reversedKeywords, uprightMeaning, reversedMeaning, image) {
     return Object.freeze({
@@ -18,7 +60,7 @@
       reversedKeywords: Object.freeze(reversedKeywords),
       uprightMeaning,
       reversedMeaning,
-      image
+      image: createImageSources(id, number, nameEn, suit, image)
     });
   }
 

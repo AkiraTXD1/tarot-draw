@@ -1,0 +1,2434 @@
+{
+  "schemaVersion": 1,
+  "deckId": "classic",
+  "deckLabel": "经典牌组",
+  "description": "经典公版 Waite-Smith 塔罗图像；本地文件由 Wikimedia Commons 原始扫描转换为 WebP。",
+  "sourceCategory": "https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)",
+  "verification": {
+    "expectedCards": 78,
+    "verifiedPublicDomainCards": 78,
+    "licenseShortName": "Public domain",
+    "copyrighted": false,
+    "conversion": "RGB WebP, maximum 640 × 1200 px, quality 84; no recoloring or compositional edits"
+  },
+  "cards": [
+    {
+      "cardId": "cups-01",
+      "file": "assets/cards/classic/cups-01-ace.webp",
+      "sourceFile": "Cups01.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups01.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Cups01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d9aaeedc3e15d2983cabcf1a63135039070864e7",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 244892,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-02",
+      "file": "assets/cards/classic/cups-02-two.webp",
+      "sourceFile": "Cups02.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups02.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cups02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "31ff6179cff02fcdb6a292ec4d15e66e4727bd55",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 232020,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-03",
+      "file": "assets/cards/classic/cups-03-three.webp",
+      "sourceFile": "Cups03.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups03.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Cups03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "8644f8f839d1e7c785ce4cd28c0a7553b40f29ca",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 223854,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-04",
+      "file": "assets/cards/classic/cups-04-four.webp",
+      "sourceFile": "Cups04.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups04.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Cups04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "aced20aeeb9b69215ea5df106bb3ccc9710b2f8a",
+      "originalDimensions": {
+        "width": 1118,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1099
+      },
+      "localBytes": 183946,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-05",
+      "file": "assets/cards/classic/cups-05-five.webp",
+      "sourceFile": "Cups05.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups05.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cups05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "28d89b259fcfccce0336557e2f691244304475ae",
+      "originalDimensions": {
+        "width": 1121,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1096
+      },
+      "localBytes": 145974,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-06",
+      "file": "assets/cards/classic/cups-06-six.webp",
+      "sourceFile": "Cups06.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups06.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Cups06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0c98185dbc9c36f1383b576e20b154e254e02a83",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 261848,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-07",
+      "file": "assets/cards/classic/cups-07-seven.webp",
+      "sourceFile": "Cups07.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups07.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cups07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "46cddf039c6cdbb73062ec02d9b46305a1c68c7e",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 188154,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-08",
+      "file": "assets/cards/classic/cups-08-eight.webp",
+      "sourceFile": "Cups08.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups08.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/Cups08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "89419f820aa82cb855cd705c97741f439a2ef757",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 198454,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-09",
+      "file": "assets/cards/classic/cups-09-nine.webp",
+      "sourceFile": "Cups09.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups09.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Cups09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d06b79c496232ae7a12e8c1bd034b37b5580202e",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 192472,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-10",
+      "file": "assets/cards/classic/cups-10-ten.webp",
+      "sourceFile": "Cups10.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups10.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Cups10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "29c49649940bac0a8c0dff6e1cb651f60e1b47af",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 248644,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-11",
+      "file": "assets/cards/classic/cups-11-page.webp",
+      "sourceFile": "Cups11.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups11.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cups11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "ef5138a1d6bea70661665547298e79364754ee90",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 250732,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-12",
+      "file": "assets/cards/classic/cups-12-knight.webp",
+      "sourceFile": "Cups12.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups12.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cups12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "bfcbc0b7014f2041b38eb76cb7b7e253d21ad3aa",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 237756,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-13",
+      "file": "assets/cards/classic/cups-13-queen.webp",
+      "sourceFile": "Cups13.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups13.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cups13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "69b68cee5e7e09e624a53169aed26035ab04143e",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 212070,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "cups-14",
+      "file": "assets/cards/classic/cups-14-king.webp",
+      "sourceFile": "Cups14.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cups14.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Cups14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a78389417bbcbc09e8fdeddec49332938cf48a86",
+      "originalDimensions": {
+        "width": 1121,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1096
+      },
+      "localBytes": 231266,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-00",
+      "file": "assets/cards/classic/major-00-fool.webp",
+      "sourceFile": "RWS Tarot 00 Fool.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_00_Fool.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a707c0123b59fd2420b05645e9d3d16b74235b42",
+      "originalDimensions": {
+        "width": 1144,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1074
+      },
+      "localBytes": 187810,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-01",
+      "file": "assets/cards/classic/major-01-magician.webp",
+      "sourceFile": "RWS Tarot 01 Magician.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_01_Magician.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d24df085c3c22da8cd7f88c0f2a4256c6ae50fda",
+      "originalDimensions": {
+        "width": 1108,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1109
+      },
+      "localBytes": 186278,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-02",
+      "file": "assets/cards/classic/major-02-high-priestess.webp",
+      "sourceFile": "RWS Tarot 02 High Priestess.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_02_High_Priestess.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "bb96b30d13035c34a06006ea4aca8ab9a5a98506",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 217170,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-03",
+      "file": "assets/cards/classic/major-03-empress.webp",
+      "sourceFile": "RWS Tarot 03 Empress.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_03_Empress.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0c04891e42d51937390049994de8ac8867b201a1",
+      "originalDimensions": {
+        "width": 1123,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1094
+      },
+      "localBytes": 233012,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-04",
+      "file": "assets/cards/classic/major-04-emperor.webp",
+      "sourceFile": "RWS Tarot 04 Emperor.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_04_Emperor.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "3fc0742d9a9199a226641a86b099df9540cfc3a3",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 233502,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-05",
+      "file": "assets/cards/classic/major-05-hierophant.webp",
+      "sourceFile": "RWS Tarot 05 Hierophant.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_05_Hierophant.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "1e7b864bcaf4c672d8fdf17e2abf7379326949c4",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 223612,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-06",
+      "file": "assets/cards/classic/major-06-lovers.webp",
+      "sourceFile": "RWS Tarot 06 Lovers.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_06_Lovers.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "1c18b372fc4658948f2d1e9770b2aa87a2e4ac02",
+      "originalDimensions": {
+        "width": 1122,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1095
+      },
+      "localBytes": 252100,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-07",
+      "file": "assets/cards/classic/major-07-chariot.webp",
+      "sourceFile": "RWS Tarot 07 Chariot.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_07_Chariot.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "8a93a2130017d32a7e8f9612d0874b5b1b41f83d",
+      "originalDimensions": {
+        "width": 1111,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 207528,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-08",
+      "file": "assets/cards/classic/major-08-strength.webp",
+      "sourceFile": "RWS Tarot 08 Strength.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_08_Strength.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "16baefeee43cee6b285838d27af690a0cf7e9db6",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 188424,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-09",
+      "file": "assets/cards/classic/major-09-hermit.webp",
+      "sourceFile": "RWS Tarot 09 Hermit.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_09_Hermit.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "106bf91c47522063c78d60ab412c53064541f617",
+      "originalDimensions": {
+        "width": 1123,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1094
+      },
+      "localBytes": 144800,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-10",
+      "file": "assets/cards/classic/major-10-wheel-of-fortune.webp",
+      "sourceFile": "RWS Tarot 10 Wheel of Fortune.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_10_Wheel_of_Fortune.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0758555fa3b5960fb631cba01879f3be0260a278",
+      "originalDimensions": {
+        "width": 1104,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1113
+      },
+      "localBytes": 232712,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-11",
+      "file": "assets/cards/classic/major-11-justice.webp",
+      "sourceFile": "RWS Tarot 11 Justice.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_11_Justice.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/RWS_Tarot_11_Justice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "16404e646dac8b8f5de4841b9259065059a04f71",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 222606,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-12",
+      "file": "assets/cards/classic/major-12-hanged-man.webp",
+      "sourceFile": "RWS Tarot 12 Hanged Man.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_12_Hanged_Man.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "41d2398a09087cc2936fcc70fcde7d92552331fd",
+      "originalDimensions": {
+        "width": 1092,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1125
+      },
+      "localBytes": 247702,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-13",
+      "file": "assets/cards/classic/major-13-death.webp",
+      "sourceFile": "RWS Tarot 13 Death.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_13_Death.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a49bfe7b626af084f33a67dbb22c001718f80a80",
+      "originalDimensions": {
+        "width": 1111,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 235918,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-14",
+      "file": "assets/cards/classic/major-14-temperance.webp",
+      "sourceFile": "RWS Tarot 14 Temperance.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_14_Temperance.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "2d9eb7320f00cbf6d9e7ae334853ff7185a6b769",
+      "originalDimensions": {
+        "width": 1106,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1111
+      },
+      "localBytes": 256952,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-15",
+      "file": "assets/cards/classic/major-15-devil.webp",
+      "sourceFile": "RWS Tarot 15 Devil.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_15_Devil.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "fc1d9242a524d82317fc45b27ef9e93af550b082",
+      "originalDimensions": {
+        "width": 1090,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1127
+      },
+      "localBytes": 187072,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-16",
+      "file": "assets/cards/classic/major-16-tower.webp",
+      "sourceFile": "RWS Tarot 16 Tower.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_16_Tower.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "c9da59cdde2b85b49c9e0ce67a6a08c7893ca926",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 173224,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-17",
+      "file": "assets/cards/classic/major-17-star.webp",
+      "sourceFile": "RWS Tarot 17 Star.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_17_Star.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "e220037a9310a12abd5733711810b4497a23ef77",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 202520,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-18",
+      "file": "assets/cards/classic/major-18-moon.webp",
+      "sourceFile": "RWS Tarot 18 Moon.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_18_Moon.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "e85cd51cdb95ef3b46284c0c317f72414b4ef30e",
+      "originalDimensions": {
+        "width": 1111,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 208456,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-19",
+      "file": "assets/cards/classic/major-19-sun.webp",
+      "sourceFile": "RWS Tarot 19 Sun.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_19_Sun.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "c12879caebe972e194e81743e5925c5b8c5607d8",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 239164,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-20",
+      "file": "assets/cards/classic/major-20-judgement.webp",
+      "sourceFile": "RWS Tarot 20 Judgement.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_20_Judgement.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "19f6e9aae7c8169c75946e3eeb2b517cb295eb53",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 234214,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "major-21",
+      "file": "assets/cards/classic/major-21-world.webp",
+      "sourceFile": "RWS Tarot 21 World.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_21_World.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "5b41b2ebeffac2fea5348b2607479a4ee0fd99b8",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 233272,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-01",
+      "file": "assets/cards/classic/pentacles-01-ace.webp",
+      "sourceFile": "Pents01.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents01.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Pents01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "3d4f8dc21e8892cd5fadbd3c748358c8984856c6",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 224956,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-02",
+      "file": "assets/cards/classic/pentacles-02-two.webp",
+      "sourceFile": "Pents02.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents02.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Pents02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "4924c94b5553a2aff65a932f066391b47e7db517",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 230474,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-03",
+      "file": "assets/cards/classic/pentacles-03-three.webp",
+      "sourceFile": "Pents03.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents03.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "ca857869e950b28e912b0a585f597d7f68112fae",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 216422,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-04",
+      "file": "assets/cards/classic/pentacles-04-four.webp",
+      "sourceFile": "Pents04.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents04.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Pents04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "4d9da9f40f497226ae0777923c9a38796adbe0c1",
+      "originalDimensions": {
+        "width": 1110,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1107
+      },
+      "localBytes": 211376,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-05",
+      "file": "assets/cards/classic/pentacles-05-five.webp",
+      "sourceFile": "Pents05.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents05.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Pents05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "cbe62be71c1a110125dd55887843ce04c3827976",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 216136,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-06",
+      "file": "assets/cards/classic/pentacles-06-six.webp",
+      "sourceFile": "Pents06.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents06.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Pents06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "cdbc8cabea9dbe863673891f6c19cd9a8310b258",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 222836,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-07",
+      "file": "assets/cards/classic/pentacles-07-seven.webp",
+      "sourceFile": "Pents07.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents07.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Pents07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "c9caaba37d822b79b329f31e7db4f13d8fd2fd9b",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 244462,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-08",
+      "file": "assets/cards/classic/pentacles-08-eight.webp",
+      "sourceFile": "Pents08.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents08.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Pents08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "7ee1f241af3bb05d2bd81c07f2a4cd2291cc60ba",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 227864,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-09",
+      "file": "assets/cards/classic/pentacles-09-nine.webp",
+      "sourceFile": "Pents09.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents09.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pents09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "2fd48ca167699b1e51985338711e191e23613827",
+      "originalDimensions": {
+        "width": 1108,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1109
+      },
+      "localBytes": 203298,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-10",
+      "file": "assets/cards/classic/pentacles-10-ten.webp",
+      "sourceFile": "Pents10.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents10.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "af975248f5a406aef38a97bc58348468b3292de6",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 241562,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-11",
+      "file": "assets/cards/classic/pentacles-11-page.webp",
+      "sourceFile": "Pents11.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents11.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pents11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "1f8c81e2972b400c31558dfccfb13c88a0a54dc4",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 173134,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-12",
+      "file": "assets/cards/classic/pentacles-12-knight.webp",
+      "sourceFile": "Pents12.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents12.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Pents12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "4b71c7b41acda1e05bb507de542e58da16c5b41c",
+      "originalDimensions": {
+        "width": 1111,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 150720,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-13",
+      "file": "assets/cards/classic/pentacles-13-queen.webp",
+      "sourceFile": "Pents13.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents13.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Pents13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0788c5de3edff7cfb9c94795e7ef96368a636f48",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 237368,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "pentacles-14",
+      "file": "assets/cards/classic/pentacles-14-king.webp",
+      "sourceFile": "Pents14.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pents14.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Pents14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "084fe9710bbd671f793ace7f11fb4c9ec5661900",
+      "originalDimensions": {
+        "width": 1107,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1110
+      },
+      "localBytes": 199756,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-01",
+      "file": "assets/cards/classic/swords-01-ace.webp",
+      "sourceFile": "Swords01.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords01.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Swords01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "8ec8b145cc670007aeb8020ce7940d9ba0ab40fe",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 221564,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-02",
+      "file": "assets/cards/classic/swords-02-two.webp",
+      "sourceFile": "Swords02.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords02.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Swords02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "303a13183017cca280fe5a79ddc513b00277a8b5",
+      "originalDimensions": {
+        "width": 1121,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1096
+      },
+      "localBytes": 196108,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-03",
+      "file": "assets/cards/classic/swords-03-three.webp",
+      "sourceFile": "Swords03.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords03.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Swords03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a4490aa4f6e1751adc47a40b2860a41c1fb4c810",
+      "originalDimensions": {
+        "width": 1103,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1114
+      },
+      "localBytes": 168094,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-04",
+      "file": "assets/cards/classic/swords-04-four.webp",
+      "sourceFile": "Swords04.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords04.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Swords04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0f50aad1a018ab09ea2d3223c5175ff988688128",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 208844,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-05",
+      "file": "assets/cards/classic/swords-05-five.webp",
+      "sourceFile": "Swords05.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords05.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Swords05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "b92b4bdb92b8b8262979440366c4d7c37b9ed152",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 222446,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-06",
+      "file": "assets/cards/classic/swords-06-six.webp",
+      "sourceFile": "Swords06.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords06.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Swords06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "295ec146bc425729ec5c7be675fd6ce3bd94c628",
+      "originalDimensions": {
+        "width": 1111,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 239776,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-07",
+      "file": "assets/cards/classic/swords-07-seven.webp",
+      "sourceFile": "Swords07.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords07.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Swords07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "4bb5e8567295b28c2d4956b33a0d26a83d52a2f8",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 182162,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-08",
+      "file": "assets/cards/classic/swords-08-eight.webp",
+      "sourceFile": "Swords08.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords08.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Swords08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "668676cf4f43fb66c4d13641dc1cbd9bcf692bf0",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 229806,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-09",
+      "file": "assets/cards/classic/swords-09-nine.webp",
+      "sourceFile": "Swords09.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords09.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Swords09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "eb3289e1366812310982a0d865910599d94154b1",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 174290,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-10",
+      "file": "assets/cards/classic/swords-10-ten.webp",
+      "sourceFile": "Swords10.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords10.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "589beb4b5e987e11b3e298b7a02a27de9bc424b6",
+      "originalDimensions": {
+        "width": 1107,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1110
+      },
+      "localBytes": 159024,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-11",
+      "file": "assets/cards/classic/swords-11-page.webp",
+      "sourceFile": "Swords11.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords11.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Swords11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a4aabf1894b6fc513a0e115b63e0b762be391b73",
+      "originalDimensions": {
+        "width": 1108,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1109
+      },
+      "localBytes": 217178,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-12",
+      "file": "assets/cards/classic/swords-12-knight.webp",
+      "sourceFile": "Swords12.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords12.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Swords12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "4c0d208cc07285f28587db0d3f89a6a1af62ac5b",
+      "originalDimensions": {
+        "width": 1112,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1105
+      },
+      "localBytes": 209948,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-13",
+      "file": "assets/cards/classic/swords-13-queen.webp",
+      "sourceFile": "Swords13.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords13.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "e4b59f06e66bc3643d5b1a2876638af8b046e4f0",
+      "originalDimensions": {
+        "width": 1104,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1113
+      },
+      "localBytes": 197508,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "swords-14",
+      "file": "assets/cards/classic/swords-14-king.webp",
+      "sourceFile": "Swords14.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Swords14.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Swords14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "69a4d993f44ecef40a8b4c4bfb5452770290130d",
+      "originalDimensions": {
+        "width": 1117,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1100
+      },
+      "localBytes": 235090,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-01",
+      "file": "assets/cards/classic/wands-01-ace.webp",
+      "sourceFile": "Wands01.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands01.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Wands01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "87dcc6561605687ecd2bcd672f3157ad6b1eaaae",
+      "originalDimensions": {
+        "width": 1106,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1111
+      },
+      "localBytes": 225096,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-02",
+      "file": "assets/cards/classic/wands-02-two.webp",
+      "sourceFile": "Wands02.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands02.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Wands02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "224cd7b4b1512574f77dfbeca6f64ec30eb779e1",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 212164,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-03",
+      "file": "assets/cards/classic/wands-03-three.webp",
+      "sourceFile": "Wands03.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands03.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Wands03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "8b18d992a00b65f783f1ce95930ea7a6d7771eab",
+      "originalDimensions": {
+        "width": 1103,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1114
+      },
+      "localBytes": 239754,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-04",
+      "file": "assets/cards/classic/wands-04-four.webp",
+      "sourceFile": "Wands04.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands04.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wands04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d938100eabd3e515789eac05dcebb2d7749d57df",
+      "originalDimensions": {
+        "width": 1108,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1109
+      },
+      "localBytes": 190836,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-05",
+      "file": "assets/cards/classic/wands-05-five.webp",
+      "sourceFile": "Wands05.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands05.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Wands05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "480db3a9788df55659a554252e6f305e55f35720",
+      "originalDimensions": {
+        "width": 1108,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1109
+      },
+      "localBytes": 203762,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-06",
+      "file": "assets/cards/classic/wands-06-six.webp",
+      "sourceFile": "Wands06.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands06.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Wands06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "a06a540821876a1693ac1856cbf017bc8b011dbf",
+      "originalDimensions": {
+        "width": 1118,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1099
+      },
+      "localBytes": 216738,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-07",
+      "file": "assets/cards/classic/wands-07-seven.webp",
+      "sourceFile": "Wands07.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands07.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Wands07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d63a45b166eda1dc993268f78a760a86f7c52209",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 168362,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-08",
+      "file": "assets/cards/classic/wands-08-eight.webp",
+      "sourceFile": "Wands08.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands08.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Wands08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "ee83d049b8fa4f4fd378f0f69b58fc4c25b4ab8b",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 170726,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-09",
+      "file": "assets/cards/classic/wands-09-nine.webp",
+      "sourceFile": "Wands09.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands09.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Wands09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "3715a212b70ecc95737b6b1ea5ee360332624218",
+      "originalDimensions": {
+        "width": 1114,
+        "height": 1919
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 217466,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-10",
+      "file": "assets/cards/classic/wands-10-ten.webp",
+      "sourceFile": "Wands10.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands10.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Wands10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "7931b8e703b4fe520ffd4bda5da49d8087c1e3ca",
+      "originalDimensions": {
+        "width": 1101,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1116
+      },
+      "localBytes": 195872,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-11",
+      "file": "assets/cards/classic/wands-11-page.webp",
+      "sourceFile": "Wands11.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands11.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Wands11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0b898179e4d32aed7a57f583083fe9c699c9481e",
+      "originalDimensions": {
+        "width": 1109,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1108
+      },
+      "localBytes": 245238,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-12",
+      "file": "assets/cards/classic/wands-12-knight.webp",
+      "sourceFile": "Wands12.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands12.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Wands12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "0260e923a92c43ed4943ce475a05eb03f0086cf4",
+      "originalDimensions": {
+        "width": 1115,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1102
+      },
+      "localBytes": 254802,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-13",
+      "file": "assets/cards/classic/wands-13-queen.webp",
+      "sourceFile": "Wands13.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands13.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wands13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "011c387bbdebeca12b308bda5555a7c024705e75",
+      "originalDimensions": {
+        "width": 1118,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1099
+      },
+      "localBytes": 249248,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    },
+    {
+      "cardId": "wands-14",
+      "file": "assets/cards/classic/wands-14-king.webp",
+      "sourceFile": "Wands14.jpg",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wands14.jpg",
+      "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Wands14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "sourcePlatform": "Wikimedia Commons",
+      "sourceCollection": "Rider-Waite-Smith tarot deck (TaionWC)",
+      "creator": "Pamela Colman Smith (1878–1951)",
+      "originalCopyrightHolder": "Arthur Edward Waite (1857–1942)",
+      "workDate": "1910",
+      "license": "Public domain",
+      "publicDomainMark": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsLicenseTags": [
+        "CC-PD-Mark",
+        "PD-old-80-expired"
+      ],
+      "attributionRequired": false,
+      "copyrighted": false,
+      "originalSha1": "d181026328ff20bd53162d74806a97a138925822",
+      "originalDimensions": {
+        "width": 1104,
+        "height": 1920
+      },
+      "localDimensions": {
+        "width": 640,
+        "height": 1113
+      },
+      "localBytes": 265028,
+      "downloadedAt": "2026-08-07T21:54:58-07:00"
+    }
+  ]
+}

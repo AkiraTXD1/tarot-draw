@@ -40,6 +40,7 @@ const SUIT_LABELS = Object.freeze({
 });
 
 const STORAGE_KEY = "quiet-tarot-reading-history-v1";
+const DECK_THEME_STORAGE_KEY = "quiet-tarot-deck-theme-v1";
 const UINT32_RANGE = 4294967296;
 
 const appState = {
@@ -47,7 +48,8 @@ const appState = {
   revealedIndexes: new Set(),
   saved: false,
   history: [],
-  historySummaryModel: null
+  historySummaryModel: null,
+  deckThemeId: window.DEFAULT_TAROT_DECK_THEME || "text"
 };
 
 /* ------------------------------
@@ -97,24 +99,31 @@ function drawCards(positions) {
 
 /**
  * 统一生成牌面。
- * card.image 有值时先加入图片；图片加载失败会移除图片，
+ * 当前主题有图片时先加入图片；图片加载失败会移除图片，
  * 已同时生成的文字内容会自然成为回退牌面。
  */
 function renderCardFace(card, isReversed, position) {
   const content = document.createElement("span");
   content.className = "card-face-content";
 
-  if (card.image) {
+  const cardImage = getCardThemeImage(card);
+  if (cardImage) {
     const image = document.createElement("img");
     image.className = "card-image";
-    image.src = card.image;
+    image.classList.toggle("is-reversed-image", isReversed);
+    image.src = cardImage;
     image.alt = `${card.nameZh}卡面`;
     image.loading = "eager";
+    image.decoding = "async";
+    image.hidden = true;
+    image.addEventListener("load", () => {
+      image.hidden = false;
+      content.classList.add("has-image");
+    });
     image.addEventListener("error", () => {
       image.remove();
       content.classList.remove("has-image");
     });
-    content.classList.add("has-image");
     content.append(image);
   }
 
@@ -222,9 +231,7 @@ function createSummaryModelFromRecord(record) {
           ? (isReversed ? sourceCard.reversedMeaning : sourceCard.uprightMeaning)
           : ""),
         symbol: savedCard.symbol || (sourceCard ? sourceCard.symbol : "·"),
-        image: typeof savedCard.image === "string"
-          ? savedCard.image
-          : (sourceCard ? sourceCard.image : null)
+        image: sourceCard ? sourceCard.image : (savedCard.image || null)
       };
     })
   };
@@ -332,14 +339,20 @@ function renderSummaryMiniCard(card, index) {
   symbol.setAttribute("aria-hidden", "true");
   symbol.textContent = card.symbol;
 
-  if (card.image) {
+  const cardImage = getCardThemeImage(card);
+  if (cardImage) {
     const image = document.createElement("img");
     image.className = "summary-mini-image";
+    image.classList.toggle("is-reversed-image", card.orientation === "逆位");
     image.alt = card.nameZh + "缩略卡面";
     image.loading = "eager";
+    image.decoding = "async";
     image.addEventListener("load", () => miniCard.classList.add("has-thumbnail"));
-    image.addEventListener("error", () => image.remove());
-    image.src = card.image;
+    image.addEventListener("error", () => {
+      image.remove();
+      miniCard.classList.remove("has-thumbnail");
+    });
+    image.src = cardImage;
     visual.append(image);
   }
 
@@ -455,6 +468,116 @@ function setShareMode(elements, source) {
   }
 }
 
+/* ------------------------------
+   牌组主题：只控制显示层
+------------------------------ */
+
+function getDeckTheme(themeId = appState.deckThemeId) {
+  const themes = window.TAROT_DECK_THEMES || {};
+  return themes[themeId] || themes[window.DEFAULT_TAROT_DECK_THEME] || themes.text || null;
+}
+
+function getCardThemeImage(card, themeId = appState.deckThemeId) {
+  const theme = getDeckTheme(themeId);
+  if (!theme || theme.type !== "image" || !card) {
+    return null;
+  }
+
+  const sourceCard = card.id
+    ? card
+    : window.TAROT_CARDS.find((candidate) => candidate.id === card.cardId);
+  const imageSources = sourceCard ? sourceCard.image : card.image;
+
+  if (typeof imageSources === "string") {
+    return imageSources;
+  }
+
+  if (!imageSources || typeof imageSources !== "object") {
+    return null;
+  }
+
+  const imageKey = theme.imageKey || theme.id;
+  const source = imageSources[imageKey];
+  return typeof source === "string" && source.trim() ? source : null;
+}
+
+function loadDeckThemePreference() {
+  const fallback = window.DEFAULT_TAROT_DECK_THEME || "text";
+
+  try {
+    const savedTheme = window.localStorage.getItem(DECK_THEME_STORAGE_KEY);
+    return getDeckTheme(savedTheme) ? savedTheme : fallback;
+  } catch (error) {
+    console.warn("无法读取牌组主题偏好。", error);
+    return fallback;
+  }
+}
+
+function saveDeckThemePreference(themeId) {
+  try {
+    window.localStorage.setItem(DECK_THEME_STORAGE_KEY, themeId);
+  } catch (error) {
+    console.warn("无法保存牌组主题偏好。", error);
+  }
+}
+
+function applyDeckTheme(elements, themeId, options = {}) {
+  const { persist = true, rerender = true } = options;
+  const fallback = window.DEFAULT_TAROT_DECK_THEME || "text";
+  const theme = getDeckTheme(themeId) || getDeckTheme(fallback);
+
+  if (!theme) {
+    return;
+  }
+
+  appState.deckThemeId = theme.id;
+  document.documentElement.dataset.deckTheme = theme.id;
+
+  elements.deckThemeInputs.forEach((input) => {
+    input.checked = input.value === theme.id;
+  });
+
+  elements.deckThemeNote.textContent = theme.type === "image"
+    ? "当前显示经典公版卡面；缺图时自动回退文字版，不会重新抽牌。"
+    : "当前显示文字牌面；切换只改变显示，不会重新抽牌。";
+
+  if (persist) {
+    saveDeckThemePreference(theme.id);
+  }
+
+  if (rerender) {
+    rerenderForDeckTheme(elements);
+  }
+}
+
+function rerenderForDeckTheme(elements) {
+  const reading = appState.currentReading;
+
+  if (reading) {
+    const cardButtons = elements.cardsGrid.querySelectorAll(".tarot-card");
+    reading.results.forEach((result, index) => {
+      if (!appState.revealedIndexes.has(index)) {
+        return;
+      }
+
+      const front = cardButtons[index] ? cardButtons[index].querySelector(".card-front") : null;
+      if (front) {
+        front.replaceChildren(renderCardFace(result.card, result.isReversed, result.position));
+      }
+    });
+
+    if (appState.revealedIndexes.size === reading.results.length) {
+      showCurrentSummary(elements);
+    }
+  }
+
+  if (appState.historySummaryModel) {
+    elements.historySummary.replaceChildren(renderSummaryReport(appState.historySummaryModel));
+  }
+
+  renderHistory(elements);
+}
+
 function getKeywords(card, isReversed) {
   return isReversed ? card.reversedKeywords : card.uprightKeywords;
 }
@@ -520,6 +643,7 @@ function initializeApp() {
   }
 
   appState.history = loadHistory();
+  applyDeckTheme(elements, loadDeckThemePreference(), { persist: false, rerender: false });
   bindEvents(elements);
   updateSpreadControls(elements);
   updateQuestionCount(elements);
@@ -531,6 +655,8 @@ function getElements() {
     questionInput: document.getElementById("questionInput"),
     questionCount: document.getElementById("questionCount"),
     spreadSelect: document.getElementById("spreadSelect"),
+    deckThemeInputs: [...document.querySelectorAll('input[name="deckTheme"]')],
+    deckThemeNote: document.getElementById("deckThemeNote"),
     customCountField: document.getElementById("customCountField"),
     customCount: document.getElementById("customCount"),
     countMinus: document.getElementById("countMinus"),
@@ -565,6 +691,13 @@ function getElements() {
 function bindEvents(elements) {
   elements.questionInput.addEventListener("input", () => updateQuestionCount(elements));
   elements.spreadSelect.addEventListener("change", () => updateSpreadControls(elements));
+  elements.deckThemeInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.checked) {
+        applyDeckTheme(elements, input.value);
+      }
+    });
+  });
   elements.customCount.addEventListener("input", () => {
     clampCustomCount(elements);
     updatePositionPreview(elements);
@@ -891,12 +1024,29 @@ function renderHistory(elements) {
       const row = document.createElement("li");
       row.className = "history-card-row";
 
+      const sourceCard = window.TAROT_CARDS.find((card) => card.id === savedCard.cardId);
+      const cardImage = getCardThemeImage(sourceCard || savedCard);
+
       const position = document.createElement("span");
       position.className = "history-position";
       position.textContent = savedCard.position;
 
       const name = document.createElement("span");
-      name.textContent = savedCard.nameZh;
+      name.className = "history-card-name";
+
+      if (cardImage) {
+        const thumbnail = document.createElement("img");
+        thumbnail.className = "history-card-thumbnail";
+        thumbnail.classList.toggle("is-reversed-image", savedCard.orientation === "逆位");
+        thumbnail.src = cardImage;
+        thumbnail.alt = "";
+        thumbnail.loading = "lazy";
+        thumbnail.decoding = "async";
+        thumbnail.addEventListener("error", () => thumbnail.remove());
+        name.append(thumbnail);
+      }
+
+      name.append(document.createTextNode(savedCard.nameZh));
 
       const orientation = document.createElement("span");
       orientation.className = "history-orientation";
@@ -1034,7 +1184,10 @@ function validateDeck(deck) {
     const badKeywords = !Array.isArray(card.uprightKeywords) || !Array.isArray(card.reversedKeywords) ||
       card.uprightKeywords.length === 0 || card.reversedKeywords.length === 0;
 
-    const badImage = card.image !== null && (typeof card.image !== "string" || !card.image.trim());
+    const imageSources = card.image;
+    const badImage = !imageSources || typeof imageSources !== "object" ||
+      imageSources.text !== null ||
+      typeof imageSources.classic !== "string" || !imageSources.classic.trim();
 
     if (missingText || badKeywords || !Number.isInteger(card.number) || badImage) {
       errors.push(`${card.id || "未知牌"} 的字段不完整`);
