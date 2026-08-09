@@ -23,6 +23,34 @@
     14: "king"
   });
 
+  /*
+   * 原创牌组按稳定 card ID 映射；未完成的牌明确保留为 null，
+   * 因此缺图不会产生无效请求，并会由统一渲染器显示文字牌面。
+   */
+  const ORIGINAL_IMAGE_SOURCES = Object.freeze({
+    "major-00": "assets/cards/original/major-00-fool.png",
+    "major-01": "assets/cards/original/major-01-magician.png",
+    "major-02": "assets/cards/original/major-02-high-priestess.png",
+    "major-03": "assets/cards/original/major-03-empress.png",
+    "major-04": "assets/cards/original/major-04-emperor.png",
+    "major-05": "assets/cards/original/major-05-hierophant.png",
+    "major-06": "assets/cards/original/major-06-lovers.png",
+    "major-07": "assets/cards/original/major-07-chariot.png",
+    "major-08": "assets/cards/original/major-08-strength.png",
+    "major-09": "assets/cards/original/major-09-hermit.png",
+    "major-10": "assets/cards/original/major-10-wheel-of-fortune.png",
+    "major-11": "assets/cards/original/major-11-justice.png",
+    "major-12": "assets/cards/original/major-12-hanged-man.png",
+    "major-13": "assets/cards/original/major-13-death.png",
+    "major-14": "assets/cards/original/major-14-temperance.png",
+    "major-15": "assets/cards/original/major-15-devil.png",
+    "major-16": "assets/cards/original/major-16-tower.png",
+    "major-17": "assets/cards/original/major-17-star.png",
+    "major-18": "assets/cards/original/major-18-moon.png",
+    "major-19": "assets/cards/original/major-19-sun.png",
+    "major-21": "assets/cards/original/major-21-world.png"
+  });
+
   function slugifyEnglishName(name) {
     return name
       .toLowerCase()
@@ -38,7 +66,8 @@
 
     const defaults = {
       text: null,
-      classic: `assets/cards/classic/${id}-${suffix}.webp`
+      classic: `assets/cards/classic/${id}-${suffix}.webp`,
+      original: ORIGINAL_IMAGE_SOURCES[id] || null
     };
 
     if (imageOverrides && typeof imageOverrides === "object") {

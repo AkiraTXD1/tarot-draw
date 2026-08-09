@@ -537,9 +537,9 @@ function applyDeckTheme(elements, themeId, options = {}) {
     input.checked = input.value === theme.id;
   });
 
-  elements.deckThemeNote.textContent = theme.type === "image"
-    ? "当前显示经典公版卡面；缺图时自动回退文字版，不会重新抽牌。"
-    : "当前显示文字牌面；切换只改变显示，不会重新抽牌。";
+  elements.deckThemeNote.textContent = theme.note || (theme.type === "image"
+    ? "当前显示图像牌面；缺图时自动回退文字版，不会重新抽牌。"
+    : "当前显示文字牌面；切换只改变显示，不会重新抽牌。");
 
   if (persist) {
     saveDeckThemePreference(theme.id);
@@ -1187,7 +1187,9 @@ function validateDeck(deck) {
     const imageSources = card.image;
     const badImage = !imageSources || typeof imageSources !== "object" ||
       imageSources.text !== null ||
-      typeof imageSources.classic !== "string" || !imageSources.classic.trim();
+      typeof imageSources.classic !== "string" || !imageSources.classic.trim() ||
+      !(imageSources.original === null ||
+        (typeof imageSources.original === "string" && imageSources.original.trim()));
 
     if (missingText || badKeywords || !Number.isInteger(card.number) || badImage) {
       errors.push(`${card.id || "未知牌"} 的字段不完整`);

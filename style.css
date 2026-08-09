@@ -199,7 +199,7 @@ button {
 
 .deck-theme-options {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--line);
   background: rgba(5, 8, 11, 0.6);
 }

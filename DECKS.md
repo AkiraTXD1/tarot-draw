@@ -1,4 +1,4 @@
-# 牌组主题与经典卡面来源
+# 牌组主题与卡面来源
 
 ## 当前主题
 
@@ -6,10 +6,19 @@
 | --- | --- | --- | --- |
 | `text` | 文字版 | 文字 | 原有 CSS 与文字牌面 |
 | `classic` | 经典牌组 | 图像 + 文字 | `assets/cards/classic/*.webp` |
+| `original` | 原创牌组 | 图像 + 文字回退 | `assets/cards/original/*.png` |
 
 主题配置位于 `decks.js`。`script.js` 中的显示辅助函数根据当前主题读取图像；`drawCards()`、`secureRandomInt()` 与正逆位判定不读取主题配置或文件名。
 
 切换主题时只会重建已经翻开的 DOM 牌面、当前总结与已打开的历史总结。未翻开的牌不会被揭示，`appState.currentReading.results` 不会被替换。
+
+## 原创牌组接入状态
+
+原创牌组使用项目所有者提供并确认的最终成图。当前已接入 21 张大阿卡纳：`major-00`–`major-19` 与 `major-21`；本批未收到 `major-20` Judgement / 审判，小阿卡纳也尚未接入。
+
+原文件是 PNG，而主题渲染器并不要求 WebP，因此全部保留原始 PNG、原始像素尺寸和原始长宽比，没有裁切、缩放、重绘、调色、加边框或加文字。逐张映射见 `assets/cards/original/README.md`。
+
+`cards.js` 中未完成的 `image.original` 明确为 `null`。用户抽到审判或小阿卡纳时，原创主题会显示文字牌面，不创建无效图片请求；这不会改用经典图像，也不会影响抽牌结果。
 
 ## 经典牌组来源与公版状态
 
@@ -58,10 +67,19 @@ pentacles-14-king.webp
 - 详细牌面和缩略图的 `error` 事件会移除失败图像，保留正常方向的文字牌面与牌义。
 - 逆位只旋转图像本身 180 度；中文、英文、关键词和牌义不旋转。
 
-## 添加原创或其他第三套牌组
+## 继续补全原创牌组
 
-1. 在 `decks.js` 中增加主题，例如 `original`，设置唯一 `id`、`label`、`type: "image"`、`imageKey: "original"` 和独立资源目录。
-2. 在 `cards.js` 的图像来源对象中为全部卡牌加入 `original` 路径；缺图可以保留为 `null`。
+1. 使用与卡牌 ID 对应的规范文件名放入 `assets/cards/original/`。
+2. 在 `cards.js` 的 `ORIGINAL_IMAGE_SOURCES` 中加入该卡牌 ID 与相对路径。
+3. 不要从文件名生成或调整随机结果；文件名只属于显示层。
+4. 运行缺图回退、正逆位、历史、总结和移动端检查。
+
+第一批 12 张小阿卡纳测试提示词及视觉语言分析见 `MINOR_ARCANA_TEST_PROMPTS.md`。
+
+## 添加其他牌组
+
+1. 在 `decks.js` 中增加主题，例如 `anotherDeck`，设置唯一 `id`、`label`、`type: "image"`、`imageKey` 和独立资源目录。
+2. 在 `cards.js` 的图像来源对象中为全部卡牌加入同名路径；缺图可以保留为 `null`。
 3. 将文件放入如 `assets/cards/original/`，保持一张卡牌 ID 对应一个文件。
 4. 在 `index.html` 的主题控件加入同值选项。
 5. 在新的授权清单中记录来源、作者、许可与日期。
