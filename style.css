@@ -977,6 +977,19 @@ html[data-deck-type="image"] .tarot-card {
   line-height: 1.2;
 }
 
+.card-title-orientation {
+  color: var(--gold-soft);
+  font-family: var(--sans);
+  font-size: 0.68em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.is-reversed .card-title-orientation {
+  color: #c89a8f;
+}
+
 .card-image-title .card-name-en {
   margin-top: 1px;
   font-size: 0.7rem;
@@ -1018,8 +1031,7 @@ html[data-deck-type="image"] .tarot-card {
   gap: 5px;
 }
 
-.card-image-facts .card-suit,
-.card-image-facts .orientation-badge {
+.card-image-facts .card-suit {
   padding: 2px 5px;
   font-size: 0.59rem;
   white-space: nowrap;
@@ -1212,6 +1224,19 @@ html[data-deck-type="image"] .tarot-card {
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
+}
+
+.summary-title-orientation {
+  color: var(--gold-soft);
+  font-family: var(--sans);
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.summary-mini-card.is-reversed .summary-title-orientation {
+  color: #d0a298;
 }
 
 .summary-mini-name-en {

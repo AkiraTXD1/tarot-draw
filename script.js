@@ -166,6 +166,12 @@ function renderCardFace(card, isReversed, position) {
   if (cardImage) {
     content.classList.add("is-image-layout");
 
+    const titleOrientation = document.createElement("span");
+    titleOrientation.className = "card-title-orientation";
+    titleOrientation.textContent = ` · ${orientation.textContent}`;
+    nameZh.append(titleOrientation);
+    meta.replaceChildren(suit);
+
     const title = document.createElement("span");
     title.className = "card-image-title";
     title.append(number, nameZh, nameEn);
@@ -190,6 +196,8 @@ function renderCardFace(card, isReversed, position) {
     image.addEventListener("error", () => {
       image.remove();
       content.classList.remove("has-image", "is-image-layout");
+      nameZh.textContent = card.nameZh;
+      meta.replaceChildren(suit, orientation);
       content.replaceChildren(positionLabel, symbol, number, nameZh, nameEn, meta, reading);
     });
 
@@ -381,6 +389,13 @@ function renderSummaryMiniCard(card, index) {
   const nameZh = document.createElement("h4");
   nameZh.textContent = card.nameZh;
 
+  if (cardImage) {
+    const titleOrientation = document.createElement("span");
+    titleOrientation.className = "summary-title-orientation";
+    titleOrientation.textContent = ` · ${card.orientation}`;
+    nameZh.append(titleOrientation);
+  }
+
   const nameEn = document.createElement("p");
   nameEn.className = "summary-mini-name-en";
   nameEn.textContent = card.nameEn;
@@ -397,7 +412,11 @@ function renderSummaryMiniCard(card, index) {
   meaning.className = "summary-mini-meaning";
   meaning.textContent = card.meaning;
 
-  miniCard.append(position, visual, number, nameZh, nameEn, orientation, keywords, meaning);
+  miniCard.append(position, visual, number, nameZh, nameEn);
+  if (!cardImage) {
+    miniCard.append(orientation);
+  }
+  miniCard.append(keywords, meaning);
   return miniCard;
 }
 
