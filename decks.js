@@ -27,13 +27,14 @@
     }),
     original: Object.freeze({
       id: "original",
-      label: "原创牌组",
-      shortLabel: "原创",
+      label: "手绘牌组",
+      shortLabel: "手绘",
+      nameEn: "Sketch",
       type: "image",
       imageKey: "original",
       imageDirectory: "assets/cards/original/",
       fallbackThemeId: "text",
-      note: "当前显示原创牌组；已接入的最终卡面按需加载，其余缺图自动回退文字版，不会重新抽牌。"
+      note: "当前显示手绘牌组（Sketch）；78 张最终卡面按需加载，切换不会重新抽牌。"
     })
   };
 

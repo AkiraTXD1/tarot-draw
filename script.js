@@ -1188,8 +1188,7 @@ function validateDeck(deck) {
     const badImage = !imageSources || typeof imageSources !== "object" ||
       imageSources.text !== null ||
       typeof imageSources.classic !== "string" || !imageSources.classic.trim() ||
-      !(imageSources.original === null ||
-        (typeof imageSources.original === "string" && imageSources.original.trim()));
+      typeof imageSources.original !== "string" || !imageSources.original.trim();
 
     if (missingText || badKeywords || !Number.isInteger(card.number) || badImage) {
       errors.push(`${card.id || "未知牌"} 的字段不完整`);

@@ -1,44 +1,37 @@
-# 原创牌组卡面
+# 手绘牌组（Sketch）卡面
 
-本目录保存项目所有者提供并最终确认的原创牌面。文件按稳定 `card ID + 英文短名` 命名；文件名只用于显示，不参与抽牌或正逆位判断。
+本目录保存项目所有者提供并最终确认的完整手绘牌面。文件按稳定 `card ID + 英文短名` 命名；文件名只用于显示，不参与抽牌或正逆位判断。
 
-## 当前接入状态
+## 接入状态
 
-- 已接入：21 张大阿卡纳（`major-00`–`major-19`、`major-21`）
-- 未收到：`major-20` Judgement / 审判
-- 小阿卡纳：尚未接入
-- 歧义文件：0
-
-原创主题遇到尚未接入的牌时会直接显示完整文字牌面，不会读取经典牌组图片，也不会重新抽牌。
+- 大阿卡纳：22 张（`major-00`–`major-21`）
+- 权杖：14 张（`wands-01`–`wands-14`）
+- 圣杯：14 张（`cups-01`–`cups-14`）
+- 宝剑：14 张（`swords-01`–`swords-14`）
+- 星币：14 张（`pentacles-01`–`pentacles-14`）
+- 总计：78 张；缺牌 0，重复映射 0，歧义文件 0
 
 ## 文件处理
 
-原文件均为 PNG。项目的主题映射可以直接读取 PNG，并不强制 WebP，因此本批文件保持原始格式、原始像素尺寸和原始长宽比；没有裁切、缩放、重绘、调色、加框或加字。
+来源文件均为 PNG。项目的主题映射可以直接读取 PNG，并不强制 WebP，因此全部保持原始格式、像素尺寸、长宽比和图像内容；没有裁切、缩放、重绘、调色、加框或加字。项目内 78 张文件与来源逐一通过 SHA-256 校验一致。
 
-## 大阿卡纳映射
+## 命名规则
 
-| ID | Card | 文件 | 状态 |
-| --- | --- | --- | --- |
-| `major-00` | The Fool | `major-00-fool.png` | 已接入 |
-| `major-01` | The Magician | `major-01-magician.png` | 已接入 |
-| `major-02` | The High Priestess | `major-02-high-priestess.png` | 已接入 |
-| `major-03` | The Empress | `major-03-empress.png` | 已接入 |
-| `major-04` | The Emperor | `major-04-emperor.png` | 已接入 |
-| `major-05` | The Hierophant | `major-05-hierophant.png` | 已接入 |
-| `major-06` | The Lovers | `major-06-lovers.png` | 已接入 |
-| `major-07` | The Chariot | `major-07-chariot.png` | 已接入 |
-| `major-08` | Strength | `major-08-strength.png` | 已接入 |
-| `major-09` | The Hermit | `major-09-hermit.png` | 已接入 |
-| `major-10` | Wheel of Fortune | `major-10-wheel-of-fortune.png` | 已接入 |
-| `major-11` | Justice | `major-11-justice.png` | 已接入 |
-| `major-12` | The Hanged Man | `major-12-hanged-man.png` | 已接入 |
-| `major-13` | Death | `major-13-death.png` | 已接入 |
-| `major-14` | Temperance | `major-14-temperance.png` | 已接入 |
-| `major-15` | The Devil | `major-15-devil.png` | 已接入 |
-| `major-16` | The Tower | `major-16-tower.png` | 已接入 |
-| `major-17` | The Star | `major-17-star.png` | 已接入 |
-| `major-18` | The Moon | `major-18-moon.png` | 已接入 |
-| `major-19` | The Sun | `major-19-sun.png` | 已接入 |
-| `major-20` | Judgement | `major-20-judgement.png` | 未收到，不创建占位文件 |
-| `major-21` | The World | `major-21-world.png` | 已接入 |
+大阿卡纳使用卡牌编号与英文短名：
 
+```text
+major-00-fool.png
+major-20-judgement.png
+major-21-world.png
+```
+
+小阿卡纳使用花色、两位编号与牌阶：
+
+```text
+wands-01-ace.png
+cups-12-knight.png
+swords-13-queen.png
+pentacles-14-king.png
+```
+
+`cards.js` 使用同一规则生成全部 `image.original` 相对路径。详细牌面、总结缩略图和历史总结共用这组路径；图片加载失败时统一回退到文字牌面，不会重新抽牌。

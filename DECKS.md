@@ -6,19 +6,19 @@
 | --- | --- | --- | --- |
 | `text` | 文字版 | 文字 | 原有 CSS 与文字牌面 |
 | `classic` | 经典牌组 | 图像 + 文字 | `assets/cards/classic/*.webp` |
-| `original` | 原创牌组 | 图像 + 文字回退 | `assets/cards/original/*.png` |
+| `original` | 手绘牌组（Sketch） | 图像 + 文字回退 | `assets/cards/original/*.png` |
 
 主题配置位于 `decks.js`。`script.js` 中的显示辅助函数根据当前主题读取图像；`drawCards()`、`secureRandomInt()` 与正逆位判定不读取主题配置或文件名。
 
 切换主题时只会重建已经翻开的 DOM 牌面、当前总结与已打开的历史总结。未翻开的牌不会被揭示，`appState.currentReading.results` 不会被替换。
 
-## 原创牌组接入状态
+## 手绘牌组接入状态
 
-原创牌组使用项目所有者提供并确认的最终成图。当前已接入 21 张大阿卡纳：`major-00`–`major-19` 与 `major-21`；本批未收到 `major-20` Judgement / 审判，小阿卡纳也尚未接入。
+手绘牌组使用项目所有者提供并确认的最终成图，已完整接入标准 78 张：22 张大阿卡纳，以及权杖、圣杯、宝剑、星币各 14 张。
 
 原文件是 PNG，而主题渲染器并不要求 WebP，因此全部保留原始 PNG、原始像素尺寸和原始长宽比，没有裁切、缩放、重绘、调色、加边框或加文字。逐张映射见 `assets/cards/original/README.md`。
 
-`cards.js` 中未完成的 `image.original` 明确为 `null`。用户抽到审判或小阿卡纳时，原创主题会显示文字牌面，不创建无效图片请求；这不会改用经典图像，也不会影响抽牌结果。
+`cards.js` 按稳定 card ID 和英文短名为全部 78 张生成 `image.original` 相对路径。手绘主题与文字、经典主题共享同一组抽牌结果，只改变显示资源；图片加载失败时仍由统一渲染器保留文字牌面。
 
 ## 经典牌组来源与公版状态
 
@@ -57,6 +57,8 @@ swords-12-knight.webp
 pentacles-14-king.webp
 ```
 
+手绘牌组沿用相同 basename，并保留来源 PNG 格式，例如 `major-20-judgement.png` 与 `cups-12-knight.png`。
+
 `cards.js` 根据稳定卡牌 ID、编号与英文名生成这些显示路径。随机抽牌仍只从 78 张卡牌对象的临时池中抽取，不解析图片目录或文件名。
 
 ## 加载和回退
@@ -67,10 +69,10 @@ pentacles-14-king.webp
 - 详细牌面和缩略图的 `error` 事件会移除失败图像，保留正常方向的文字牌面与牌义。
 - 逆位只旋转图像本身 180 度；中文、英文、关键词和牌义不旋转。
 
-## 继续补全原创牌组
+## 更新手绘牌组
 
-1. 使用与卡牌 ID 对应的规范文件名放入 `assets/cards/original/`。
-2. 在 `cards.js` 的 `ORIGINAL_IMAGE_SOURCES` 中加入该卡牌 ID 与相对路径。
+1. 使用与卡牌 ID 对应的规范文件名替换 `assets/cards/original/` 中的目标文件。
+2. 保持 PNG 格式与现有路径；若要改变格式或命名，再同步修改 `cards.js` 的路径生成规则。
 3. 不要从文件名生成或调整随机结果；文件名只属于显示层。
 4. 运行缺图回退、正逆位、历史、总结和移动端检查。
 
