@@ -945,6 +945,109 @@ select {
   padding-top: 12px;
 }
 
+/* 图片牌组的详细牌面：让卡面艺术成为主体，文字牌组不受这些规则影响。 */
+html[data-deck-type="image"] .tarot-card {
+  height: auto;
+  aspect-ratio: 5 / 12.7;
+}
+
+.card-face-content.is-image-layout {
+  gap: 0;
+  padding: 14px;
+}
+
+.card-image-title {
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  align-items: center;
+  flex-direction: column;
+  padding: 1px 4px 9px;
+  text-align: center;
+}
+
+.card-image-title .card-number {
+  margin: 0;
+  font-size: 0.65rem;
+}
+
+.card-image-title .card-name-zh {
+  margin-top: 2px;
+  font-size: clamp(1.18rem, 2.4vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.card-image-title .card-name-en {
+  margin-top: 1px;
+  font-size: 0.7rem;
+}
+
+.card-face-content.is-image-layout .card-image {
+  width: 100%;
+  max-height: none;
+  aspect-ratio: 5 / 9;
+  margin: 0;
+  flex: 0 0 auto;
+  background: #d6c9aa;
+  object-fit: contain;
+}
+
+.card-image-facts {
+  display: grid;
+  min-width: 0;
+  flex: 0 0 auto;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-image-facts .card-position {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+}
+
+.card-image-facts .card-meta {
+  margin: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.card-image-facts .card-suit,
+.card-image-facts .orientation-badge {
+  padding: 2px 5px;
+  font-size: 0.59rem;
+  white-space: nowrap;
+}
+
+.card-face-content.is-image-layout .card-reading {
+  margin-top: 0;
+  padding-top: 9px;
+}
+
+.card-face-content.is-image-layout .card-keywords-label,
+.card-face-content.is-image-layout .card-meaning-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.11em;
+}
+
+.card-face-content.is-image-layout .card-keywords {
+  margin: 3px 0 7px;
+  font-size: 0.79rem;
+  line-height: 1.4;
+}
+
+.card-face-content.is-image-layout .card-meaning {
+  margin-top: 3px;
+  font-size: 0.71rem;
+  line-height: 1.48;
+}
+
 /* ------------------------------
    紧凑牌阵总结与截图模式
 ------------------------------ */
@@ -1650,6 +1753,19 @@ body.is-share-mode[data-share-source="history"] #closeHistorySummaryButton {
   .card-image {
     max-height: 205px;
     margin-bottom: 9px;
+  }
+
+  html[data-deck-type="image"] .tarot-card {
+    aspect-ratio: 5 / 13.4;
+  }
+
+  .card-face-content.is-image-layout {
+    padding: 12px;
+  }
+
+  .card-face-content.is-image-layout .card-image {
+    max-height: none;
+    margin: 0;
   }
 
   .history-toolbar,

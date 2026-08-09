@@ -99,33 +99,14 @@ function drawCards(positions) {
 
 /**
  * 统一生成牌面。
- * 当前主题有图片时先加入图片；图片加载失败会移除图片，
- * 已同时生成的文字内容会自然成为回退牌面。
+ * 图片主题使用“标题 → 大图 → 牌位信息 → 牌义”的专属层级；
+ * 图片加载失败时会恢复原有文字牌面的结构与样式。
  */
 function renderCardFace(card, isReversed, position) {
   const content = document.createElement("span");
   content.className = "card-face-content";
 
   const cardImage = getCardThemeImage(card);
-  if (cardImage) {
-    const image = document.createElement("img");
-    image.className = "card-image";
-    image.classList.toggle("is-reversed-image", isReversed);
-    image.src = cardImage;
-    image.alt = `${card.nameZh}卡面`;
-    image.loading = "eager";
-    image.decoding = "async";
-    image.hidden = true;
-    image.addEventListener("load", () => {
-      image.hidden = false;
-      content.classList.add("has-image");
-    });
-    image.addEventListener("error", () => {
-      image.remove();
-      content.classList.remove("has-image");
-    });
-    content.append(image);
-  }
 
   const positionLabel = document.createElement("span");
   positionLabel.className = "card-position";
@@ -181,7 +162,42 @@ function renderCardFace(card, isReversed, position) {
   meaning.textContent = isReversed ? card.reversedMeaning : card.uprightMeaning;
 
   reading.append(keywordsLabel, keywords, meaningLabel, meaning);
-  content.append(positionLabel, symbol, number, nameZh, nameEn, meta, reading);
+
+  if (cardImage) {
+    content.classList.add("is-image-layout");
+
+    const title = document.createElement("span");
+    title.className = "card-image-title";
+    title.append(number, nameZh, nameEn);
+
+    const image = document.createElement("img");
+    image.className = "card-image";
+    image.classList.toggle("is-reversed-image", isReversed);
+    image.src = cardImage;
+    image.alt = `${card.nameZh}卡面`;
+    image.loading = "eager";
+    image.decoding = "async";
+    image.hidden = true;
+
+    const facts = document.createElement("span");
+    facts.className = "card-image-facts";
+    facts.append(positionLabel, meta);
+
+    image.addEventListener("load", () => {
+      image.hidden = false;
+      content.classList.add("has-image");
+    });
+    image.addEventListener("error", () => {
+      image.remove();
+      content.classList.remove("has-image", "is-image-layout");
+      content.replaceChildren(positionLabel, symbol, number, nameZh, nameEn, meta, reading);
+    });
+
+    content.append(title, image, facts, reading);
+  } else {
+    // 文字牌组保持原有 DOM 顺序与视觉布局不变。
+    content.append(positionLabel, symbol, number, nameZh, nameEn, meta, reading);
+  }
 
   return content;
 }
@@ -532,6 +548,7 @@ function applyDeckTheme(elements, themeId, options = {}) {
 
   appState.deckThemeId = theme.id;
   document.documentElement.dataset.deckTheme = theme.id;
+  document.documentElement.dataset.deckType = theme.type;
 
   elements.deckThemeInputs.forEach((input) => {
     input.checked = input.value === theme.id;
