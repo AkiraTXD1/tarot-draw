@@ -7,6 +7,7 @@
 | `text` | 文字版 | 文字 | 原有 CSS 与文字牌面 |
 | `classic` | 经典牌组 | 图像 + 文字 | `assets/cards/classic/*.webp` |
 | `original` | 手绘牌组（Sketch） | 图像 + 文字回退 | `assets/cards/original/*.png` |
+| `apple` | 苹果塔罗（Apple Tarot） | 图像 + 文字回退 | `assets/cards/apple/*.png` |
 
 主题配置位于 `decks.js`。`script.js` 中的显示辅助函数根据当前主题读取图像；`drawCards()`、`secureRandomInt()` 与正逆位判定不读取主题配置或文件名。
 
@@ -19,6 +20,12 @@
 原文件是 PNG，而主题渲染器并不要求 WebP，因此全部保留原始 PNG、原始像素尺寸和原始长宽比，没有裁切、缩放、重绘、调色、加边框或加文字。逐张映射见 `assets/cards/original/README.md`。
 
 `cards.js` 按稳定 card ID 和英文短名为全部 78 张生成 `image.original` 相对路径。手绘主题与文字、经典主题共享同一组抽牌结果，只改变显示资源；图片加载失败时仍由统一渲染器保留文字牌面。
+
+## 苹果塔罗接入状态
+
+苹果塔罗使用项目所有者提供的 78 张原创 PNG：22 张大阿卡纳与四个花色各 14 张。文件名先按英文牌名与现有稳定 card ID 做唯一匹配，再复制为与手绘牌组相同的 URL-safe basename；来源文件未移动或修改，项目内副本与来源 SHA-256 一致。
+
+`cards.js` 只增加 `image.apple` artwork path，不复制牌名、关键词或牌义。新历史记录保存当时的 `deckId`；没有 `deckId` 的旧记录继续按升级前的默认文字主题显示。
 
 ## 经典牌组来源与公版状态
 
@@ -57,7 +64,7 @@ swords-12-knight.webp
 pentacles-14-king.webp
 ```
 
-手绘牌组沿用相同 basename，并保留来源 PNG 格式，例如 `major-20-judgement.png` 与 `cups-12-knight.png`。
+手绘与苹果牌组沿用相同 basename，并保留来源 PNG 格式，例如 `major-20-judgement.png` 与 `cups-12-knight.png`。
 
 `cards.js` 根据稳定卡牌 ID、编号与英文名生成这些显示路径。随机抽牌仍只从 78 张卡牌对象的临时池中抽取，不解析图片目录或文件名。
 
@@ -65,7 +72,7 @@ pentacles-14-king.webp
 
 - 页面初始加载不会创建 78 个图像节点。
 - 文字主题完全不请求卡面图片。
-- 经典主题仅在某张牌翻开、显示当前总结或打开历史总结时创建对应图像节点。
+- 图像主题仅在某张牌翻开、显示当前总结或打开历史总结时创建对应图像节点，不会在首页预载 78 张图片。
 - 详细牌面和缩略图的 `error` 事件会移除失败图像，保留正常方向的文字牌面与牌义。
 - 逆位只旋转图像本身 180 度；中文、英文、关键词和牌义不旋转。
 

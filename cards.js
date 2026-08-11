@@ -39,7 +39,8 @@
     const defaults = {
       text: null,
       classic: `assets/cards/classic/${id}-${suffix}.webp`,
-      original: `assets/cards/original/${id}-${suffix}.png`
+      original: `assets/cards/original/${id}-${suffix}.png`,
+      apple: `assets/cards/apple/${id}-${suffix}.png`
     };
 
     if (imageOverrides && typeof imageOverrides === "object") {

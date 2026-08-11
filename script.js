@@ -41,7 +41,9 @@ const SUIT_LABELS = Object.freeze({
 
 const STORAGE_KEY = "quiet-tarot-reading-history-v1";
 const DECK_THEME_STORAGE_KEY = "quiet-tarot-deck-theme-v1";
+const LEGACY_HISTORY_DECK_THEME_ID = "text";
 const UINT32_RANGE = 4294967296;
+const warnedMissingDeckImages = new Set();
 
 const appState = {
   currentReading: null,
@@ -106,7 +108,12 @@ function renderCardFace(card, isReversed, position) {
   const content = document.createElement("span");
   content.className = "card-face-content";
 
-  const cardImage = getCardThemeImage(card);
+  const deckThemeId = appState.deckThemeId;
+  const cardImage = getCardThemeImage(card, deckThemeId);
+
+  if (getDeckTheme(deckThemeId)?.type === "image" && !cardImage) {
+    warnDeckImageMissing(card, deckThemeId);
+  }
 
   const positionLabel = document.createElement("span");
   positionLabel.className = "card-position";
@@ -194,6 +201,7 @@ function renderCardFace(card, isReversed, position) {
       content.classList.add("has-image");
     });
     image.addEventListener("error", () => {
+      warnDeckImageMissing(card, deckThemeId);
       image.remove();
       content.classList.remove("has-image", "is-image-layout");
       nameZh.textContent = card.nameZh;
@@ -216,6 +224,7 @@ function renderCardFace(card, isReversed, position) {
 
 function createSummaryModelFromReading(reading) {
   return Object.freeze({
+    deckId: appState.deckThemeId,
     question: reading.question,
     spreadName: reading.spreadName,
     createdAt: reading.createdAt,
@@ -235,6 +244,7 @@ function createSummaryModelFromReading(reading) {
 
 function createSummaryModelFromRecord(record) {
   return {
+    deckId: getRecordDeckThemeId(record),
     question: record.question,
     spreadName: record.spreadName,
     createdAt: record.createdAt,
@@ -289,7 +299,7 @@ function renderSummaryReport(model) {
   grid.className = "summary-card-grid";
 
   model.cards.forEach((card, index) => {
-    grid.append(renderSummaryMiniCard(card, index));
+    grid.append(renderSummaryMiniCard(card, index, model.deckId));
   });
 
   const trend = document.createElement("section");
@@ -346,7 +356,7 @@ function appendSummaryFact(list, label, value, className) {
   list.append(group);
 }
 
-function renderSummaryMiniCard(card, index) {
+function renderSummaryMiniCard(card, index, deckThemeId = appState.deckThemeId) {
   const miniCard = document.createElement("article");
   miniCard.className = "summary-mini-card " + (card.orientation === "逆位" ? "is-reversed" : "is-upright");
   miniCard.setAttribute("aria-label", card.position + "：" + card.nameZh + "，" + card.orientation);
@@ -363,7 +373,11 @@ function renderSummaryMiniCard(card, index) {
   symbol.setAttribute("aria-hidden", "true");
   symbol.textContent = card.symbol;
 
-  const cardImage = getCardThemeImage(card);
+  const cardImage = getCardThemeImage(card, deckThemeId);
+  if (getDeckTheme(deckThemeId)?.type === "image" && !cardImage) {
+    warnDeckImageMissing(card, deckThemeId);
+  }
+
   if (cardImage) {
     const image = document.createElement("img");
     image.className = "summary-mini-image";
@@ -373,6 +387,7 @@ function renderSummaryMiniCard(card, index) {
     image.decoding = "async";
     image.addEventListener("load", () => miniCard.classList.add("has-thumbnail"));
     image.addEventListener("error", () => {
+      warnDeckImageMissing(card, deckThemeId);
       image.remove();
       miniCard.classList.remove("has-thumbnail");
     });
@@ -534,6 +549,28 @@ function getCardThemeImage(card, themeId = appState.deckThemeId) {
   const imageKey = theme.imageKey || theme.id;
   const source = imageSources[imageKey];
   return typeof source === "string" && source.trim() ? source : null;
+}
+
+function warnDeckImageMissing(card, themeId = appState.deckThemeId) {
+  const theme = getDeckTheme(themeId);
+  if (!theme || theme.id !== "apple") {
+    return;
+  }
+
+  const cardId = card?.id || card?.cardId || "unknown";
+  const warningKey = `${theme.id}:${cardId}`;
+  if (warnedMissingDeckImages.has(warningKey)) {
+    return;
+  }
+
+  warnedMissingDeckImages.add(warningKey);
+  console.warn(`Apple Tarot image missing: ${cardId}`);
+}
+
+function getRecordDeckThemeId(record) {
+  const savedThemeId = record && typeof record.deckId === "string" ? record.deckId : "";
+  const themes = window.TAROT_DECK_THEMES || {};
+  return savedThemeId && themes[savedThemeId] ? savedThemeId : LEGACY_HISTORY_DECK_THEME_ID;
 }
 
 function loadDeckThemePreference() {
@@ -939,6 +976,7 @@ function saveCurrentReading(elements) {
 
   const record = {
     id: createRecordId(),
+    deckId: appState.deckThemeId,
     createdAt: reading.createdAt,
     question: reading.question,
     spreadKey: reading.spreadKey,
@@ -1021,6 +1059,7 @@ function renderHistory(elements) {
   elements.clearHistoryButton.disabled = appState.history.length === 0;
 
   appState.history.forEach((record) => {
+    const recordDeckThemeId = getRecordDeckThemeId(record);
     const item = document.createElement("details");
     item.className = "history-item";
 
@@ -1061,7 +1100,10 @@ function renderHistory(elements) {
       row.className = "history-card-row";
 
       const sourceCard = window.TAROT_CARDS.find((card) => card.id === savedCard.cardId);
-      const cardImage = getCardThemeImage(sourceCard || savedCard);
+      const cardImage = getCardThemeImage(sourceCard || savedCard, recordDeckThemeId);
+      if (getDeckTheme(recordDeckThemeId)?.type === "image" && !cardImage) {
+        warnDeckImageMissing(sourceCard || savedCard, recordDeckThemeId);
+      }
 
       const position = document.createElement("span");
       position.className = "history-position";
@@ -1078,7 +1120,10 @@ function renderHistory(elements) {
         thumbnail.alt = "";
         thumbnail.loading = "lazy";
         thumbnail.decoding = "async";
-        thumbnail.addEventListener("error", () => thumbnail.remove());
+        thumbnail.addEventListener("error", () => {
+          warnDeckImageMissing(sourceCard || savedCard, recordDeckThemeId);
+          thumbnail.remove();
+        });
         name.append(thumbnail);
       }
 
@@ -1224,7 +1269,8 @@ function validateDeck(deck) {
     const badImage = !imageSources || typeof imageSources !== "object" ||
       imageSources.text !== null ||
       typeof imageSources.classic !== "string" || !imageSources.classic.trim() ||
-      typeof imageSources.original !== "string" || !imageSources.original.trim();
+      typeof imageSources.original !== "string" || !imageSources.original.trim() ||
+      typeof imageSources.apple !== "string" || !imageSources.apple.trim();
 
     if (missingText || badKeywords || !Number.isInteger(card.number) || badImage) {
       errors.push(`${card.id || "未知牌"} 的字段不完整`);

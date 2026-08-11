@@ -199,7 +199,7 @@ button {
 
 .deck-theme-options {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--line);
   background: rgba(5, 8, 11, 0.6);
 }
@@ -231,6 +231,7 @@ button {
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
   text-align: center;
   transition: color 180ms ease, background-color 180ms ease;
 }

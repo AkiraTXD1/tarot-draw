@@ -35,6 +35,18 @@
       imageDirectory: "assets/cards/original/",
       fallbackThemeId: "text",
       note: "当前显示手绘牌组（Sketch）；78 张最终卡面按需加载，切换不会重新抽牌。"
+    }),
+    apple: Object.freeze({
+      id: "apple",
+      label: "苹果塔罗",
+      shortLabel: "苹果",
+      nameEn: "Apple Tarot",
+      description: "原创苹果主题塔罗牌组",
+      type: "image",
+      imageKey: "apple",
+      imageDirectory: "assets/cards/apple/",
+      fallbackThemeId: "text",
+      note: "当前显示苹果塔罗（Apple Tarot）；78 张原创卡面按需加载，切换不会重新抽牌。"
     })
   };
 
