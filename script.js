@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 /* ------------------------------
    固定配置：牌阵与显示标签
@@ -44,6 +44,7 @@ const DECK_THEME_STORAGE_KEY = "quiet-tarot-deck-theme-v1";
 const LEGACY_HISTORY_DECK_THEME_ID = "text";
 const UINT32_RANGE = 4294967296;
 const warnedMissingDeckImages = new Set();
+let cleansingTimers = [];
 
 const appState = {
   currentReading: null,
@@ -326,17 +327,43 @@ function renderSummaryReport(model) {
   const aiBlock = document.createElement("section");
   aiBlock.className = "summary-ai-block";
 
+  const aiHeading = document.createElement("div");
+  aiHeading.className = "summary-ai-heading";
+
   const aiTitle = document.createElement("h4");
   aiTitle.textContent = "AI 解读信息";
 
+  const copyButton = document.createElement("button");
+  copyButton.type = "button";
+  copyButton.className = "summary-copy-button";
+  copyButton.textContent = "复制抽牌文字";
+
   const aiText = document.createElement("pre");
-  aiText.textContent = createAiReadingText(model);
+  const readingText = createAiReadingText(model);
+  aiText.textContent = readingText;
+
+  const copyStatus = document.createElement("span");
+  copyStatus.className = "summary-copy-status";
+  copyStatus.setAttribute("role", "status");
+  copyStatus.setAttribute("aria-live", "polite");
+
+  copyButton.addEventListener("click", async () => {
+    const copied = await copyTextToClipboard(readingText);
+    copyButton.textContent = copied ? "已复制" : "复制失败";
+    copyStatus.textContent = copied ? "可直接粘贴给 AI。" : "请长按下方文字手动复制。";
+
+    window.setTimeout(() => {
+      copyButton.textContent = "复制抽牌文字";
+      copyStatus.textContent = "";
+    }, 2200);
+  });
 
   const sourceNote = document.createElement("p");
   sourceNote.className = "summary-source-note";
   sourceNote.textContent = "仅整理本次已确定的牌面数据，不进行 AI 解读。";
 
-  aiBlock.append(aiTitle, aiText);
+  aiHeading.append(aiTitle, copyButton);
+  aiBlock.append(aiHeading, aiText, copyStatus);
   report.append(header, grid, trend, aiBlock, sourceNote);
 
   return report;
@@ -449,10 +476,41 @@ function createAiReadingText(model) {
   return [
     "问题：" + model.question,
     "牌阵：" + model.spreadName,
+    "抽牌时间：" + formatDate(model.createdAt),
     ...model.cards.map((card) => (
-      card.position + "：" + card.nameZh + "｜" + card.orientation + "｜" + card.keywords.join("、")
+      card.position + "：" + card.nameZh + "（" + card.nameEn + "）｜" + card.orientation +
+      "｜关键词：" + card.keywords.join("、") + "｜牌义：" + card.meaning
     ))
   ].join("\n");
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (error) {
+      console.warn("Clipboard API unavailable, using local fallback.", error);
+    }
+  }
+
+  const fallback = document.createElement("textarea");
+  fallback.value = text;
+  fallback.setAttribute("readonly", "");
+  fallback.className = "clipboard-fallback";
+  document.body.append(fallback);
+  fallback.select();
+  fallback.setSelectionRange(0, fallback.value.length);
+
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch (error) {
+    console.warn("Clipboard fallback failed.", error);
+  }
+
+  fallback.remove();
+  return copied;
 }
 
 function showCurrentSummary(elements) {
@@ -746,7 +804,6 @@ function getElements() {
     currentSummary: document.getElementById("currentSummary"),
     shareButton: document.getElementById("shareButton"),
     saveButton: document.getElementById("saveButton"),
-    resetButton: document.getElementById("resetButton"),
     actionStatus: document.getElementById("actionStatus"),
     cardTemplate: document.getElementById("cardTemplate"),
     historyPanel: document.getElementById("historyPanel"),
@@ -757,7 +814,13 @@ function getElements() {
     historySummaryDialog: document.getElementById("historySummaryDialog"),
     historySummary: document.getElementById("historySummary"),
     historyShareButton: document.getElementById("historyShareButton"),
-    closeHistorySummaryButton: document.getElementById("closeHistorySummaryButton")
+    closeHistorySummaryButton: document.getElementById("closeHistorySummaryButton"),
+    openCleansingButton: document.getElementById("openCleansingButton"),
+    closeCleansingButton: document.getElementById("closeCleansingButton"),
+    cleansingPage: document.getElementById("cleansingPage"),
+    cleansingStatus: document.getElementById("cleansingStatus"),
+    cleansingProgressBar: document.getElementById("cleansingProgressBar"),
+    startCleansingButton: document.getElementById("startCleansingButton")
   };
 }
 
@@ -784,7 +847,6 @@ function bindEvents(elements) {
   elements.countPlus.addEventListener("click", () => changeCustomCount(elements, 1));
   elements.drawButton.addEventListener("click", () => startReading(elements));
   elements.saveButton.addEventListener("click", () => saveCurrentReading(elements));
-  elements.resetButton.addEventListener("click", () => resetReading(elements));
   elements.shareButton.addEventListener("click", () => toggleShareMode(elements, "current"));
   elements.historyShareButton.addEventListener("click", () => toggleShareMode(elements, "history"));
   elements.closeHistorySummaryButton.addEventListener("click", () => closeHistorySummary(elements));
@@ -793,6 +855,14 @@ function bindEvents(elements) {
     appState.historySummaryModel = null;
   });
   elements.clearHistoryButton.addEventListener("click", () => clearAllHistory(elements));
+  elements.openCleansingButton.addEventListener("click", () => openCleansingPage(elements));
+  elements.closeCleansingButton.addEventListener("click", () => closeCleansingPage(elements));
+  elements.startCleansingButton.addEventListener("click", () => startCleansingRitual(elements));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !elements.cleansingPage.hidden) {
+      closeCleansingPage(elements);
+    }
+  });
 }
 
 function updateQuestionCount(elements) {
@@ -871,6 +941,7 @@ function startReading(elements) {
   appState.saved = false;
 
   setSetupLocked(elements, true);
+  setDrawButtonLabel(elements, "本轮牌面已确定");
   elements.saveButton.disabled = true;
   elements.saveButton.textContent = "保存本次记录";
   setShareMode(elements, null);
@@ -923,9 +994,11 @@ function revealCard(elements, cardButton, index) {
   if (revealed === total) {
     elements.saveButton.disabled = false;
     elements.readingTitle.textContent = "本次牌面";
-    elements.flipInstruction.textContent = "所有牌已翻开，已生成本次牌阵总结。";
-    elements.actionStatus.textContent = "牌面已全部揭示。";
+    elements.flipInstruction.textContent = "所有牌已翻开。可直接修改或清空问题，再次抽牌。";
+    elements.actionStatus.textContent = "牌面已全部揭示，提问与牌阵已重新开放。";
     showCurrentSummary(elements);
+    setSetupLocked(elements, false);
+    setDrawButtonLabel(elements, "再次直接抽牌");
   } else {
     elements.flipInstruction.textContent = `已翻开 ${revealed} / ${total} 张，继续点击牌背。`;
   }
@@ -940,28 +1013,78 @@ function setSetupLocked(elements, locked) {
   elements.drawButton.disabled = locked;
 }
 
-function resetReading(elements) {
-  if (!appState.currentReading) {
-    return;
+function setDrawButtonLabel(elements, label) {
+  const labelElement = elements.drawButton.querySelector("span");
+  if (labelElement) {
+    labelElement.textContent = label;
   }
+}
 
-  const confirmed = window.confirm("确定要放弃当前牌面并重新抽牌吗？未保存的结果将不会保留。");
-  if (!confirmed) {
-    return;
-  }
+/* ------------------------------
+   紫水晶净化：只改变当前页面展示
+------------------------------ */
 
-  appState.currentReading = null;
-  appState.revealedIndexes = new Set();
-  appState.saved = false;
+function openCleansingPage(elements) {
   setShareMode(elements, null);
-  elements.cardsGrid.replaceChildren();
-  elements.currentSummary.replaceChildren();
-  elements.summarySection.hidden = true;
-  elements.readingArea.hidden = true;
-  elements.actionStatus.textContent = "";
-  setSetupLocked(elements, false);
-  updateSpreadControls(elements);
-  document.querySelector(".reading-setup").scrollIntoView({ behavior: "smooth", block: "start" });
+  document.body.classList.add("is-cleansing-view");
+  elements.cleansingPage.hidden = false;
+  elements.openCleansingButton.setAttribute("aria-expanded", "true");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.requestAnimationFrame(() => elements.closeCleansingButton.focus());
+}
+
+function closeCleansingPage(elements) {
+  cancelCleansingRitual(elements);
+  document.body.classList.remove("is-cleansing-view");
+  elements.cleansingPage.hidden = true;
+  elements.openCleansingButton.setAttribute("aria-expanded", "false");
+  elements.openCleansingButton.focus();
+}
+
+function startCleansingRitual(elements) {
+  cancelCleansingRitual(elements, { resetCopy: false });
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const duration = reducedMotion ? 900 : 12000;
+  const phaseTwo = Math.round(duration * 0.34);
+  const phaseThree = Math.round(duration * 0.68);
+
+  elements.cleansingPage.style.setProperty("--cleansing-duration", `${duration}ms`);
+  elements.cleansingPage.classList.remove("is-cleansing-complete");
+  void elements.cleansingProgressBar.offsetWidth;
+  elements.cleansingPage.classList.add("is-cleansing-active");
+  elements.startCleansingButton.disabled = true;
+  elements.startCleansingButton.textContent = "净化进行中";
+  elements.cleansingStatus.textContent = "先让上一轮的问题慢慢停下来……";
+
+  cleansingTimers = [
+    window.setTimeout(() => {
+      elements.cleansingStatus.textContent = "紫水晶的光线掠过牌面，带走残留的杂念……";
+    }, phaseTwo),
+    window.setTimeout(() => {
+      elements.cleansingStatus.textContent = "重新回到呼吸，为新的提问留出空白……";
+    }, phaseThree),
+    window.setTimeout(() => {
+      elements.cleansingPage.classList.remove("is-cleansing-active");
+      elements.cleansingPage.classList.add("is-cleansing-complete");
+      elements.cleansingStatus.textContent = "净化完成 · 可以带着新的问题回到牌阵。";
+      elements.startCleansingButton.disabled = false;
+      elements.startCleansingButton.textContent = "再次净化";
+      cleansingTimers = [];
+    }, duration)
+  ];
+}
+
+function cancelCleansingRitual(elements, options = {}) {
+  cleansingTimers.forEach((timerId) => window.clearTimeout(timerId));
+  cleansingTimers = [];
+  elements.cleansingPage.classList.remove("is-cleansing-active", "is-cleansing-complete");
+  elements.startCleansingButton.disabled = false;
+  elements.startCleansingButton.textContent = "开始净化";
+
+  if (options.resetCopy !== false) {
+    elements.cleansingStatus.textContent = "将注意力放回呼吸，准备好后开始。";
+  }
 }
 
 /* ------------------------------

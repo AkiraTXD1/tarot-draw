@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: dark;
   --ink: #0b0e12;
   --ink-blue: #0e141c;
@@ -91,6 +91,10 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
+.brand-copy {
+  min-width: 0;
+}
+
 .brand-mark {
   display: grid;
   width: 54px;
@@ -128,6 +132,353 @@ button {
   font-family: var(--serif);
   font-size: 0.94rem;
   letter-spacing: 0.04em;
+}
+
+.ritual-nav-button {
+  display: inline-flex;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 8px 14px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(143, 122, 168, 0.5);
+  color: #c9bdd4;
+  background: rgba(53, 43, 62, 0.18);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.ritual-nav-button span {
+  color: #a993bc;
+  font-size: 1rem;
+}
+
+.ritual-nav-button:hover,
+.ritual-nav-button:focus-visible {
+  border-color: #9f89b3;
+  outline: none;
+  color: var(--ivory);
+  background: rgba(84, 67, 98, 0.26);
+}
+
+/* ------------------------------
+   紫水晶净化页面
+------------------------------ */
+
+.cleansing-page {
+  --cleansing-duration: 12000ms;
+  width: min(1180px, calc(100% - 40px));
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 34px 0 70px;
+}
+
+body.is-cleansing-view .site-header,
+body.is-cleansing-view .page-shell,
+body.is-cleansing-view .site-footer {
+  display: none;
+}
+
+body.is-cleansing-view {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(94, 72, 111, 0.18), transparent 31rem),
+    linear-gradient(145deg, #0b0e12 0%, #111018 54%, #090b0e 100%);
+}
+
+.cleansing-shell {
+  border: 1px solid rgba(177, 154, 103, 0.32);
+  background: linear-gradient(145deg, rgba(25, 24, 29, 0.96), rgba(12, 15, 20, 0.98));
+  box-shadow: var(--shadow);
+}
+
+.cleansing-topbar {
+  display: flex;
+  min-height: 92px;
+  padding: 20px clamp(20px, 4vw, 42px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cleansing-kicker {
+  margin: 4px 0 0;
+  color: var(--ivory-muted);
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+}
+
+.cleansing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  min-height: 640px;
+}
+
+.cleansing-altar,
+.cleansing-copy {
+  min-width: 0;
+  padding: clamp(28px, 5vw, 62px);
+}
+
+.cleansing-altar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(17, 18, 24, 0.42), rgba(8, 10, 13, 0.78)),
+    repeating-linear-gradient(94deg, rgba(173, 139, 93, 0.035) 0 1px, transparent 1px 25px);
+}
+
+.amethyst-stage {
+  position: relative;
+  width: min(100%, 480px);
+  height: 360px;
+  overflow: hidden;
+  border: 1px solid rgba(143, 122, 168, 0.28);
+  background:
+    radial-gradient(ellipse at 50% 78%, rgba(107, 84, 122, 0.16), transparent 42%),
+    linear-gradient(180deg, #111219 0%, #0c0e12 76%, #17130f 77%, #0d0c0b 100%);
+  box-shadow: inset 0 -36px 60px rgba(0, 0, 0, 0.35);
+}
+
+.amethyst-stage::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 17%;
+  left: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(177, 154, 103, 0.38), transparent);
+}
+
+.amethyst-halo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(148, 123, 169, 0.2);
+  border-radius: 50%;
+  opacity: 0.42;
+  transform: translateX(-50%);
+}
+
+.amethyst-cluster {
+  position: absolute;
+  z-index: 2;
+  right: 8%;
+  bottom: 18%;
+  width: 180px;
+  height: 190px;
+}
+
+.amethyst-point {
+  position: absolute;
+  bottom: 20px;
+  width: 48px;
+  border: 1px solid rgba(211, 193, 221, 0.44);
+  background:
+    linear-gradient(102deg, rgba(236, 224, 238, 0.3), transparent 27%),
+    linear-gradient(165deg, #9178a0 0%, #604d6b 48%, #332b3d 100%);
+  clip-path: polygon(50% 0, 92% 24%, 84% 100%, 15% 100%, 8% 24%);
+  box-shadow: inset -9px 0 rgba(27, 21, 33, 0.26);
+  transform-origin: 50% 100%;
+}
+
+.point-one {
+  left: 20px;
+  height: 112px;
+  transform: rotate(-13deg);
+}
+
+.point-two {
+  left: 60px;
+  width: 57px;
+  height: 170px;
+}
+
+.point-three {
+  left: 108px;
+  height: 130px;
+  transform: rotate(11deg);
+}
+
+.point-four {
+  left: 83px;
+  bottom: 8px;
+  width: 38px;
+  height: 82px;
+  transform: rotate(25deg);
+}
+
+.amethyst-base {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  left: 2px;
+  height: 45px;
+  border: 1px solid rgba(144, 121, 159, 0.36);
+  background: linear-gradient(160deg, #493e4e, #201c24 68%);
+  clip-path: polygon(5% 48%, 21% 12%, 78% 5%, 98% 52%, 87% 92%, 18% 100%);
+}
+
+.altar-card {
+  position: absolute;
+  z-index: 1;
+  bottom: 17.5%;
+  left: 8%;
+  width: 165px;
+  aspect-ratio: 5 / 9;
+  border: 1px solid var(--gold-soft);
+  background:
+    radial-gradient(circle at center, transparent 0 21px, rgba(177, 154, 103, 0.52) 22px 23px, transparent 24px),
+    linear-gradient(45deg, transparent 47%, rgba(177, 154, 103, 0.2) 48% 52%, transparent 53%),
+    #111820;
+  box-shadow: 14px 16px 28px rgba(0, 0, 0, 0.5);
+  transform: perspective(420px) rotateX(65deg) rotateZ(-9deg);
+  transform-origin: 50% 100%;
+}
+
+.cleansing-progress {
+  width: min(100%, 480px);
+  height: 2px;
+  margin-top: 24px;
+  overflow: hidden;
+  background: rgba(143, 122, 168, 0.18);
+}
+
+.cleansing-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #675574, #ae96be, #887294);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cleansing-status {
+  min-height: 3.4em;
+  max-width: 480px;
+  margin: 15px 0 0;
+  color: #bbb0c3;
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.cleansing-start-button {
+  min-width: 180px;
+  margin-top: 6px;
+  border-color: #8f7aa8;
+  color: #f1ece7;
+  background: #5d4d69;
+}
+
+.cleansing-start-button:hover:not(:disabled) {
+  border-color: #ab95bc;
+  background: #6c5a79;
+}
+
+.cleansing-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cleansing-copy h2 {
+  margin: 9px 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+}
+
+.cleansing-intro {
+  margin: 0;
+  color: var(--ivory-muted);
+  font-family: var(--serif);
+  font-size: 0.96rem;
+}
+
+.cleansing-steps {
+  display: grid;
+  gap: 0;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.cleansing-steps li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cleansing-steps li > span {
+  padding-top: 3px;
+  color: #9d87ad;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+}
+
+.cleansing-steps p {
+  margin: 0;
+  color: #a9a195;
+  font-size: 0.78rem;
+}
+
+.cleansing-steps strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.cleansing-note {
+  margin: 20px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid rgba(143, 122, 168, 0.55);
+  color: #85827f;
+  font-size: 0.7rem;
+}
+
+.cleansing-page.is-cleansing-active .cleansing-progress span {
+  animation: cleansing-progress var(--cleansing-duration) linear forwards;
+}
+
+.cleansing-page.is-cleansing-active .amethyst-halo {
+  animation: cleansing-halo 2.8s ease-in-out infinite;
+}
+
+.cleansing-page.is-cleansing-active .amethyst-point {
+  filter: brightness(1.16);
+}
+
+.cleansing-page.is-cleansing-complete .amethyst-halo {
+  border-color: rgba(189, 163, 204, 0.42);
+  opacity: 0.78;
+}
+
+@keyframes cleansing-progress {
+  to { transform: scaleX(1); }
+}
+
+@keyframes cleansing-halo {
+  0%, 100% { opacity: 0.32; transform: translateX(-50%) scale(0.94); }
+  50% { opacity: 0.72; transform: translateX(-50%) scale(1.04); }
 }
 
 .page-shell {
@@ -1338,6 +1689,55 @@ html[data-deck-type="image"] .tarot-card {
   overflow-wrap: anywhere;
 }
 
+.summary-ai-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.summary-ai-heading h4 {
+  margin: 0;
+}
+
+.summary-copy-button {
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid var(--line-strong);
+  color: var(--ivory-muted);
+  background: transparent;
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.summary-copy-button:hover,
+.summary-copy-button:focus-visible {
+  border-color: var(--gold);
+  outline: none;
+  color: var(--gold);
+}
+
+.summary-copy-status {
+  display: block;
+  min-height: 1.4em;
+  margin-top: 5px;
+  color: var(--gold-soft);
+  font-size: 0.62rem;
+  text-align: right;
+}
+
+.clipboard-fallback {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .summary-source-note {
   margin: 9px 0 0;
   color: #77746d;
@@ -1410,6 +1810,11 @@ body.is-share-mode .summary-report {
 }
 
 body.is-share-mode .summary-source-note {
+  display: none;
+}
+
+body.is-share-mode .summary-copy-button,
+body.is-share-mode .summary-copy-status {
   display: none;
 }
 
@@ -1667,6 +2072,15 @@ body.is-share-mode[data-share-source="history"] #closeHistorySummaryButton {
 }
 
 @media (max-width: 900px) {
+  .cleansing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cleansing-altar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -1692,8 +2106,51 @@ body.is-share-mode[data-share-source="history"] #closeHistorySummaryButton {
   }
 
   .site-header {
+    flex-wrap: wrap;
     gap: 14px;
     padding: 30px 0 24px;
+  }
+
+  .brand-copy {
+    flex: 1 1 calc(100% - 58px);
+  }
+
+  .ritual-nav-button {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .cleansing-page {
+    width: min(calc(100% - 24px), 1180px);
+    padding: 12px 0 36px;
+  }
+
+  .cleansing-topbar {
+    min-height: 76px;
+    padding: 14px;
+  }
+
+  .cleansing-kicker {
+    font-size: 0.78rem;
+  }
+
+  .cleansing-altar,
+  .cleansing-copy {
+    padding: 24px 16px;
+  }
+
+  .amethyst-stage {
+    height: 330px;
+  }
+
+  .cleansing-copy h2 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+  }
+
+  .cleansing-steps {
+    margin-top: 22px;
   }
 
   .brand-mark {
@@ -1949,6 +2406,17 @@ body.is-share-mode[data-share-source="history"] #closeHistorySummaryButton {
     line-height: 1.42;
   }
 
+  .summary-ai-heading {
+    align-items: flex-start;
+  }
+
+  .summary-copy-button {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding: 5px 8px;
+    font-size: 0.59rem;
+  }
+
   .summary-source-note {
     margin-top: 5px;
     font-size: 0.55rem;
@@ -1980,6 +2448,34 @@ body.is-share-mode[data-share-source="history"] #closeHistorySummaryButton {
 }
 
 @media (max-width: 360px) {
+  .cleansing-page {
+    width: calc(100% - 16px);
+  }
+
+  .cleansing-topbar {
+    align-items: flex-start;
+  }
+
+  .cleansing-topbar .button {
+    min-height: 40px;
+    padding-inline: 10px;
+    white-space: nowrap;
+  }
+
+  .amethyst-stage {
+    height: 300px;
+  }
+
+  .altar-card {
+    width: 138px;
+  }
+
+  .amethyst-cluster {
+    right: 1%;
+    transform: scale(0.88);
+    transform-origin: 100% 100%;
+  }
+
   .summary-report {
     padding: 10px 8px;
   }

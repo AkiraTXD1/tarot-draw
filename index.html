@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
@@ -7,22 +7,74 @@
   <meta name="theme-color" content="#0b0e12">
   <meta name="description" content="一个无需联网、使用浏览器安全随机数并支持文字、经典公版与手绘卡面的中文塔罗抽牌程序。">
   <title>静室 · 中文塔罗抽牌</title>
-  <link rel="stylesheet" href="style.css?v=apple-deck-1">
-  <script src="decks.js?v=apple-deck-1" defer></script>
-  <script src="cards.js?v=apple-deck-1" defer></script>
-  <script src="script.js?v=apple-deck-1" defer></script>
+  <link rel="stylesheet" href="style.css?v=cleansing-1">
+  <script src="decks.js?v=cleansing-1" defer></script>
+  <script src="cards.js?v=cleansing-1" defer></script>
+  <script src="script.js?v=cleansing-1" defer></script>
 </head>
 <body>
   <div class="film-grain" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="brand-mark" aria-hidden="true">☉</div>
-    <div>
+    <div class="brand-copy">
       <p class="eyebrow">PRIVATE TAROT ROOM</p>
       <h1>静室</h1>
       <p class="subtitle">给问题留一盏低灯，给答案一点时间。</p>
     </div>
+    <button type="button" class="ritual-nav-button" id="openCleansingButton" aria-controls="cleansingPage" aria-expanded="false">
+      <span aria-hidden="true">◇</span>
+      净化仪式
+    </button>
   </header>
+
+  <section class="cleansing-page" id="cleansingPage" aria-labelledby="cleansingTitle" hidden>
+    <div class="cleansing-shell">
+      <div class="cleansing-topbar">
+        <div>
+          <p class="eyebrow">AMETHYST CLEANSING</p>
+          <p class="cleansing-kicker">紫水晶 · 静心仪式</p>
+        </div>
+        <button type="button" class="button button-ghost button-small" id="closeCleansingButton">返回抽牌</button>
+      </div>
+
+      <div class="cleansing-layout">
+        <div class="cleansing-altar">
+          <div class="amethyst-stage" aria-hidden="true">
+            <div class="amethyst-halo"></div>
+            <div class="amethyst-cluster">
+              <span class="amethyst-point point-one"></span>
+              <span class="amethyst-point point-two"></span>
+              <span class="amethyst-point point-three"></span>
+              <span class="amethyst-point point-four"></span>
+              <span class="amethyst-base"></span>
+            </div>
+            <div class="altar-card altar-card-back"></div>
+          </div>
+
+          <div class="cleansing-progress" aria-hidden="true">
+            <span id="cleansingProgressBar"></span>
+          </div>
+          <p class="cleansing-status" id="cleansingStatus" role="status" aria-live="polite">
+            将注意力放回呼吸，准备好后开始。
+          </p>
+          <button type="button" class="button cleansing-start-button" id="startCleansingButton">开始净化</button>
+        </div>
+
+        <div class="cleansing-copy">
+          <p class="section-index">象征性的整理时刻</p>
+          <h2 id="cleansingTitle">紫水晶净化仪式</h2>
+          <p class="cleansing-intro">把牌放在想象中的紫水晶旁，让上一轮的问题停下来，再为下一次抽牌留出安静的空间。</p>
+          <ol class="cleansing-steps">
+            <li><span>01</span><p><strong>安放</strong>想象牌组平放在深色桌布上，紫水晶靠近牌面。</p></li>
+            <li><span>02</span><p><strong>呼吸</strong>缓慢呼吸三次，让注意力从答案回到此刻。</p></li>
+            <li><span>03</span><p><strong>净化</strong>启动短仪式，等待光线沿牌组安静掠过。</p></li>
+          </ol>
+          <p class="cleansing-note">这是帮助整理心绪的象征性仪式，不会修改抽牌结果、随机机制或历史记录。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <main class="page-shell">
     <section class="panel reading-setup" aria-labelledby="setupTitle">
@@ -144,7 +196,6 @@
 
       <div class="reading-actions">
         <button type="button" class="button button-secondary" id="saveButton" disabled>保存本次记录</button>
-        <button type="button" class="button button-ghost" id="resetButton">重新抽牌</button>
       </div>
       <p class="action-status" id="actionStatus" role="status" aria-live="polite"></p>
     </section>
